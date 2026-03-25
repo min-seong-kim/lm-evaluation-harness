@@ -30,9 +30,12 @@ output/
 data/
 temp/
 test_logs/
-
+gsm8k_llama32_3b_full_sft*/
+gsm8k_llama32_3b_full_sft_flexible*/
+llama32_mathqa_fullft_output/
 eval_results/
-
+mathqa_sft_data/
+circuit_breakers_train.json
 # Caching
 lm_eval/caching/.cache
 lm_cache/
