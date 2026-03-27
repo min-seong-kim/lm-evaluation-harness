@@ -3,8 +3,8 @@
 HuggingFace Hub에 파인튜닝된 모델을 업로드하는 스크립트
 
 python upload_finetuned_model.py \
-  ./metamath_llama32_3b_optimized_20260319_114912 \
-  --repo_id kmseong/Llama-3.2-3B-instruct-metamath-finetuned \
+  ./MATH_llama32_3b_full_sft_20260326_123531 \
+  --repo_id kmseong/Llama-3.2-3B-instruct-MATH-finetuned \
   --hf_token 
 
 """

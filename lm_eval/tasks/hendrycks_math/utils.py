@@ -32,6 +32,16 @@ def process_results(doc: dict, results: List[str]) -> Dict[str, int]:
     return results
 
 
+def doc_to_target_str(doc: dict) -> str:
+    """Coerce target into a chat-fewshot-safe string."""
+    answer = doc.get("answer", "")
+    if isinstance(answer, str):
+        return answer
+    if isinstance(answer, (list, tuple)):
+        return " or ".join(str(x) for x in answer)
+    return str(answer)
+
+
 # string normalization from https://github.com/EleutherAI/lm-evaluation-harness/blob/master/lm_eval/tasks/hendrycks_math.py
 def is_equiv(str1, str2, verbose=False):
     if str1 is None and str2 is None:
