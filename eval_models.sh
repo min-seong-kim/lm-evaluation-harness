@@ -5,12 +5,18 @@ set -o pipefail
 # LM Evaluation Harness 평가 스크립트
 # - 실행 인자 파싱 없이, 모델별로 고정 명령을 순차 실행합니다.
 
-export CUDA_VISIBLE_DEVICES=1  
+export CUDA_VISIBLE_DEVICES=1
 
 # 평가할 모델 목록 (HuggingFace model ID)
 model_list=(
-    "meta-llama/Llama-3.1-8B"
-    "meta-llama/Llama-3.1-8B-instruct"
+    "kmseong/llama2_7b_SSFT_gsm8k_FT_lr3e-5"
+    "kmseong/llama2_7b_only_sn_tuned_lr3e-5"
+    "kmseong/llama2_7b_gsm8k_ft_freeze_sn_lr3e-5"
+    "kmseong/llama2_7B_SSFT_WaRP_safety_basis_gsm8k_FT_lr3e-5"
+    "kmseong/llama2_7b_chat_SSFT_gsm8k_FT_lr3e-5"
+    "kmseong/llama2_7b_chat_only_sn_tuned_lr3e-5"
+    "kmseong/llama2_7b_chat_gsm8k_ft_freeze_sn_lr3e-5"
+    "kmseong/llama2_7B_chat_SSFT_WaRP_safety_basis_gsm8k_FT_lr3e-5"
 )
 
 export VLLM_USE_STANDALONE_COMPILE=0
@@ -42,7 +48,11 @@ for model in "${model_list[@]}"; do
 
     # 전략 1) Instruct/Chat 모델: chat template + 5-shot
     # 전략 2) 로컬 SFT/베이스 모델: plain prompt (arc_challenge: 0-shot, gsm8k: 5-shot)
+    # Llama-2 계열: fewshot_as_multiturn=True와 호환 안 되므로 --apply_chat_template 제외
     Instruct_FLAGS=()
+    # if [[ "$model" == *"Llama-2"* || "$model" == *"llama-2"* || "$model" == *"llama2"* ]]; then
+    #     : # Llama-2는 --apply_chat_template 미사용
+    # el
     if [[ "$model" == *"Instruct"* || "$model" == *"instruct"* || "$model" == *"-chat"* || "$model" == *"_chat"* ]]; then
         Instruct_FLAGS+=(--apply_chat_template)
     fi
@@ -54,7 +64,7 @@ for model in "${model_list[@]}"; do
 
     echo "[1/$total_tasks] task 평가 중: gsm8k" | tee -a "$LOG_FILE"
     if lm_eval --model vllm \
-        --model_args "$MODEL_ARGS",tensor_parallel_size=1,data_parallel_size=1,dtype=auto,gpu_memory_utilization=0.7 \
+        --model_args "$MODEL_ARGS",tensor_parallel_size=1,data_parallel_size=1,dtype=auto,gpu_memory_utilization=0.3 \
         --tasks gsm8k \
         --device cuda \
         --seed "$EVAL_SEED" \
@@ -70,51 +80,51 @@ for model in "${model_list[@]}"; do
     fi
 
 
-    echo "[2/$total_tasks] task 평가 중: arc-c" | tee -a "$LOG_FILE"
-    if lm_eval --model vllm \
-        --model_args "$MODEL_ARGS",tensor_parallel_size=1,data_parallel_size=1,dtype=auto,gpu_memory_utilization=0.7 \
-        --tasks arc_challenge \
-        --seed "$EVAL_SEED" \
-        --device cuda \
-        --num_fewshot 5 \
-        --batch_size 32 \
-        --output_path eval_results \
-        --log_samples \
-        "${Instruct_FLAGS[@]}" 2>&1 | tee -a "$LOG_FILE"; then
-        echo "✓ 완료: $model (task: arc-c)" | tee -a "$LOG_FILE"
-    else
-        echo "✗ 실패: $model (task: arc-c) - 종료 코드: $?" | tee -a "$LOG_FILE"
-        exit 1
-    fi
+#     echo "[2/$total_tasks] task 평가 중: arc-c" | tee -a "$LOG_FILE"
+#     if lm_eval --model vllm \
+#         --model_args "$MODEL_ARGS",tensor_parallel_size=1,data_parallel_size=1,dtype=auto,gpu_memory_utilization=0.7 \
+#         --tasks arc_challenge \
+#         --seed "$EVAL_SEED" \
+#         --device cuda \
+#         --num_fewshot 5 \
+#         --batch_size 32 \
+#         --output_path eval_results \
+#         --log_samples \
+#         "${Instruct_FLAGS[@]}" 2>&1 | tee -a "$LOG_FILE"; then
+#         echo "✓ 완료: $model (task: arc-c)" | tee -a "$LOG_FILE"
+#     else
+#         echo "✗ 실패: $model (task: arc-c) - 종료 코드: $?" | tee -a "$LOG_FILE"
+#         exit 1
+#     fi
 
-   echo "[3/$total_tasks] task 평가 중: mmlu" | tee -a "$LOG_FILE"
-    if lm_eval --model vllm \
-        --model_args "$MODEL_ARGS",tensor_parallel_size=1,data_parallel_size=1,dtype=auto,gpu_memory_utilization=0.7 \
-        --tasks mmlu \
-        --device cuda \
-        --seed "$EVAL_SEED" \
-        --batch_size 32 \
-        --num_fewshot 5 \
-        --output_path eval_results \
-        --log_samples \
-        "${Instruct_FLAGS[@]}" 2>&1 | tee -a "$LOG_FILE"; then
-        echo "✓ 완료: $model (task: mmlu)" | tee -a "$LOG_FILE"
-    else
-        echo "✗ 실패: $model (task: mmlu) - 종료 코드: $?" | tee -a "$LOG_FILE"
-        exit 1
-    fi
+#    echo "[3/$total_tasks] task 평가 중: mmlu" | tee -a "$LOG_FILE"
+#     if lm_eval --model vllm \
+#         --model_args "$MODEL_ARGS",tensor_parallel_size=1,data_parallel_size=1,dtype=auto,gpu_memory_utilization=0.7 \
+#         --tasks mmlu \
+#         --device cuda \
+#         --seed "$EVAL_SEED" \
+#         --batch_size 32 \
+#         --num_fewshot 5 \
+#         --output_path eval_results \
+#         --log_samples \
+#         "${Instruct_FLAGS[@]}" 2>&1 | tee -a "$LOG_FILE"; then
+#         echo "✓ 완료: $model (task: mmlu)" | tee -a "$LOG_FILE"
+#     else
+#         echo "✗ 실패: $model (task: mmlu) - 종료 코드: $?" | tee -a "$LOG_FILE"
+#         exit 1
+#     fi
 
     # echo "[1/$total_tasks] task 평가 중: hendrycks_math_safe" | tee -a "$LOG_FILE"
     # if lm_eval --model vllm \
-    #     --model_args "$MODEL_ARGS",tensor_parallel_size=1,data_parallel_size=1,dtype=auto,gpu_memory_utilization=0.7 \
+    #     --model_args "$MODEL_ARGS",tensor_parallel_size=1,data_parallel_size=1,dtype=auto,gpu_memory_utilization=0.4 \
     #     --tasks "hendrycks_math_safe" \
     #     --include_path "$TASK_INCLUDE_PATH" \
     #     --seed "$EVAL_SEED" \
     #     --device cuda \
     #     --batch_size 32 \
     #     --output_path eval_results \
-    #     --apply_chat_template \
     #     --num_fewshot 5 \
+    #     "${Instruct_FLAGS[@]}" \
     #     --log_samples 2>&1 | tee -a "$LOG_FILE"; then
     #     echo "✓ 완료: $model (task: hendrycks_math_safe)" | tee -a "$LOG_FILE"
     # else
@@ -132,3 +142,76 @@ echo "결과 경로: eval_results/" | tee -a "$LOG_FILE"
 echo "로그 파일: $LOG_FILE" | tee -a "$LOG_FILE"
 echo "==========================================" | tee -a "$LOG_FILE"
 echo "평가 종료 시간: $(date)" | tee -a "$LOG_FILE"
+
+# === 결과 요약 파일 생성 ===
+RESULTS_FILE="logs/eval_${TIMESTAMP}_results.log"
+
+python3 << PYEOF
+import re
+
+log_file = "$LOG_FILE"
+results_file = "$RESULTS_FILE"
+
+with open(log_file, 'r') as f:
+    lines = f.readlines()
+
+n = len(lines)
+current_model = None
+blocks = []  # list of (model_header, table_lines, completion_line)
+
+i = 0
+while i < n:
+    line = lines[i].rstrip('\n')
+
+    # 모델 헤더 라인 감지
+    if '모델 평가 중:' in line:
+        current_model = line
+
+    # 완료/실패 라인 감지
+    if line.startswith('✓') or line.startswith('✗'):
+        # 바로 위의 마지막 테이블 블록을 역방향으로 탐색
+        j = i - 1
+        while j >= 0 and lines[j].strip() == '':
+            j -= 1
+        table_end = j
+        while j >= 0 and lines[j].startswith('|'):
+            j -= 1
+        table_start = j + 1
+
+        if table_start <= table_end and lines[table_start].startswith('|'):
+            table_lines = [lines[k].rstrip('\n') for k in range(table_start, table_end + 1)]
+        else:
+            table_lines = []
+
+        blocks.append((current_model, table_lines, line))
+
+    i += 1
+
+with open(results_file, 'w') as f:
+    f.write("=" * 60 + "\n")
+    f.write("평가 결과 요약\n")
+    f.write("=" * 60 + "\n\n")
+
+    prev_model = None
+    for model_header, table_lines, completion_line in blocks:
+        if model_header != prev_model:
+            if prev_model is not None:
+                f.write("\n")
+            if model_header:
+                f.write(model_header + "\n")
+                f.write("-" * 40 + "\n")
+            prev_model = model_header
+
+        for tl in table_lines:
+            f.write(tl + "\n")
+        if table_lines:
+            f.write("\n")
+
+        f.write(completion_line + "\n")
+
+    f.write("\n" + "=" * 60 + "\n")
+
+print("결과 요약 파일 저장 완료: " + results_file)
+PYEOF
+
+echo "결과 요약: $RESULTS_FILE" | tee -a "$LOG_FILE"
