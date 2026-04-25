@@ -9,14 +9,8 @@ export CUDA_VISIBLE_DEVICES=1
 
 # 평가할 모델 목록 (HuggingFace model ID)
 model_list=(
-    "kmseong/llama2_7b_SSFT_gsm8k_FT_lr3e-5"
-    "kmseong/llama2_7b_only_sn_tuned_lr3e-5"
-    "kmseong/llama2_7b_gsm8k_ft_freeze_sn_lr3e-5"
-    "kmseong/llama2_7B_SSFT_WaRP_safety_basis_gsm8k_FT_lr3e-5"
-    "kmseong/llama2_7b_chat_SSFT_gsm8k_FT_lr3e-5"
-    "kmseong/llama2_7b_chat_only_sn_tuned_lr3e-5"
-    "kmseong/llama2_7b_chat_gsm8k_ft_freeze_sn_lr3e-5"
-    "kmseong/llama2_7B_chat_SSFT_WaRP_safety_basis_gsm8k_FT_lr3e-5"
+    # "kmseong/llama2-7b-chat-safedelta-scale0.1"
+    # "kmseong/llama2-7b-chat-safe-lora-num_30_gsm8k_lr2e-4"
 )
 
 export VLLM_USE_STANDALONE_COMPILE=0

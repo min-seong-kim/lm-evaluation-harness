@@ -1,5 +1,5 @@
 '''
-python hf_rm.py --username kmseong --prefix llama3.2-3b --yes
+python hf_rm.py --username kmseong --prefix llama2-7b-safe-lo --yes
 '''
 
 import argparse
