@@ -1,0 +1,23 @@
+============================================================
+평가 결과 요약
+============================================================
+
+[1/2] 모델 평가 중: kmseong/llama2_7b_chat-SSFT-MEDQA-FT-lr1e-5
+----------------------------------------
+|    Tasks     |Version|Filter|n-shot| Metric |   |Value|   |Stderr|
+|--------------|-------|------|-----:|--------|---|----:|---|-----:|
+|medqa_4options|Yaml   |none  |     5|acc     |↑  |0.443|±  |0.0139|
+|              |       |none  |     5|acc_norm|↑  |0.443|±  |0.0139|
+
+✓ 완료: kmseong/llama2_7b_chat-SSFT-MEDQA-FT-lr1e-5 (task: medqa_4options)
+
+[2/2] 모델 평가 중: kmseong/llama2_7b_chat-SSFT-MEDQA-FT-safety-mix-0.1-lr1e-5_re
+----------------------------------------
+|    Tasks     |Version|Filter|n-shot| Metric |   |Value |   |Stderr|
+|--------------|-------|------|-----:|--------|---|-----:|---|-----:|
+|medqa_4options|Yaml   |none  |     5|acc     |↑  |0.4383|±  |0.0139|
+|              |       |none  |     5|acc_norm|↑  |0.4383|±  |0.0139|
+
+✓ 완료: kmseong/llama2_7b_chat-SSFT-MEDQA-FT-safety-mix-0.1-lr1e-5_re (task: medqa_4options)
+
+============================================================

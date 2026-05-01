@@ -1,0 +1,23 @@
+============================================================
+평가 결과 요약
+============================================================
+
+[1/2] 모델 평가 중: kmseong/llama3.1_8b_base_only_sn_tuned_lr3e-5
+----------------------------------------
+|Tasks|Version|     Filter     |n-shot|  Metric   |   |Value |   |Stderr|
+|-----|------:|----------------|-----:|-----------|---|-----:|---|-----:|
+|gsm8k|      3|flexible-extract|     5|exact_match|↑  |0.3995|±  |0.0135|
+|     |       |strict-match    |     5|exact_match|↑  |0.3988|±  |0.0135|
+
+✓ 완료: kmseong/llama3.1_8b_base_only_sn_tuned_lr3e-5 (task: gsm8k)
+
+[2/2] 모델 평가 중: kmseong/llama3.1_8b_instruct_only_sn_tuned_lr3e-5
+----------------------------------------
+|Tasks|Version|     Filter     |n-shot|  Metric   |   |Value |   |Stderr|
+|-----|------:|----------------|-----:|-----------|---|-----:|---|-----:|
+|gsm8k|      3|flexible-extract|     5|exact_match|↑  |0.8143|±  |0.0107|
+|     |       |strict-match    |     5|exact_match|↑  |0.7013|±  |0.0126|
+
+✓ 완료: kmseong/llama3.1_8b_instruct_only_sn_tuned_lr3e-5 (task: gsm8k)
+
+============================================================

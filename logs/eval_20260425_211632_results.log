@@ -1,0 +1,23 @@
+============================================================
+평가 결과 요약
+============================================================
+
+[1/2] 모델 평가 중: kmseong/llama2-7b-chat-safedelta-scale0.8
+----------------------------------------
+|Tasks|Version|     Filter     |n-shot|  Metric   |   |Value |   |Stderr|
+|-----|------:|----------------|-----:|-----------|---|-----:|---|-----:|
+|gsm8k|      3|flexible-extract|     5|exact_match|↑  |0.2646|±  |0.0122|
+|     |       |strict-match    |     5|exact_match|↑  |0.2525|±  |0.0120|
+
+✓ 완료: kmseong/llama2-7b-chat-safedelta-scale0.8 (task: gsm8k)
+
+[2/2] 모델 평가 중: kmseong/llama2-7b-chat-safe-lora-num_30_gsm8k_lr2e-4
+----------------------------------------
+|Tasks|Version|     Filter     |n-shot|  Metric   |   |Value |   |Stderr|
+|-----|------:|----------------|-----:|-----------|---|-----:|---|-----:|
+|gsm8k|      3|flexible-extract|     5|exact_match|↑  |0.3738|±  |0.0133|
+|     |       |strict-match    |     5|exact_match|↑  |0.3738|±  |0.0133|
+
+✓ 완료: kmseong/llama2-7b-chat-safe-lora-num_30_gsm8k_lr2e-4 (task: gsm8k)
+
+============================================================

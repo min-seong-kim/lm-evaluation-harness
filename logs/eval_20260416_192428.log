@@ -1,0 +1,9 @@
+평가 시작 시간: Thu Apr 16 07:24:28 PM KST 2026
+고정 시드: 42
+
+
+==========================================
+[1/1] 모델 평가 중: /home/yonsei_jong/Safety-Neuron/neuron_detection/full_finetune_MATH_instruct--lr5e-5
+==========================================
+[1/3] task 평가 중: hendrycks_math_safe
+2026-04-16:19:24:28 INFO     [config.evaluate_config:301] Using default fewshot_as_multiturn=True.

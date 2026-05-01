@@ -1,0 +1,23 @@
+============================================================
+평가 결과 요약
+============================================================
+
+[1/2] 모델 평가 중: meta-llama/Meta-Llama-3-8B-Instruct
+----------------------------------------
+|Tasks|Version|     Filter     |n-shot|  Metric   |   |Value |   |Stderr|
+|-----|------:|----------------|-----:|-----------|---|-----:|---|-----:|
+|gsm8k|      3|flexible-extract|     3|exact_match|↑  |0.7635|±  |0.0117|
+|     |       |strict-match    |     3|exact_match|↑  |0.5861|±  |0.0136|
+
+✓ 완료: meta-llama/Meta-Llama-3-8B-Instruct (task: gsm8k)
+
+[2/2] 모델 평가 중: /home/yonsei_jong/Safety-Neuron/neuron_detection/full_finetune_instruct_gsm8k
+----------------------------------------
+|Tasks|Version|     Filter     |n-shot|  Metric   |   |Value |   |Stderr|
+|-----|------:|----------------|-----:|-----------|---|-----:|---|-----:|
+|gsm8k|      3|flexible-extract|     3|exact_match|↑  |0.7074|±  |0.0125|
+|     |       |strict-match    |     3|exact_match|↑  |0.7051|±  |0.0126|
+
+✓ 완료: /home/yonsei_jong/Safety-Neuron/neuron_detection/full_finetune_instruct_gsm8k (task: gsm8k)
+
+============================================================

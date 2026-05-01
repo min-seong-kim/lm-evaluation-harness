@@ -1,0 +1,29 @@
+============================================================
+평가 결과 요약
+============================================================
+
+[1/1] 모델 평가 중: kmseong/llama3.1_8b_base-SSFT-start-WaRP-original-space-gsm8k-FT-lr3e-5
+----------------------------------------
+|Tasks|Version|     Filter     |n-shot|  Metric   |   |Value |   |Stderr|
+|-----|------:|----------------|-----:|-----------|---|-----:|---|-----:|
+|gsm8k|      3|flexible-extract|     5|exact_match|↑  |0.6133|±  |0.0134|
+|     |       |strict-match    |     5|exact_match|↑  |0.6118|±  |0.0134|
+
+✓ 완료: kmseong/llama3.1_8b_base-SSFT-start-WaRP-original-space-gsm8k-FT-lr3e-5 (task: gsm8k)
+|    Tasks    |Version|Filter|n-shot| Metric |   |Value |   |Stderr|
+|-------------|------:|------|-----:|--------|---|-----:|---|-----:|
+|arc_challenge|      1|none  |     5|acc     |↑  |0.4778|±  |0.0146|
+|             |       |none  |     5|acc_norm|↑  |0.5051|±  |0.0146|
+
+✓ 완료: kmseong/llama3.1_8b_base-SSFT-start-WaRP-original-space-gsm8k-FT-lr3e-5 (task: arc-c)
+|      Groups      |Version|Filter|n-shot|Metric|   |Value |   |Stderr|
+|------------------|------:|------|------|------|---|-----:|---|-----:|
+|mmlu              |      2|none  |      |acc   |↑  |0.6012|±  |0.0039|
+| - humanities     |      2|none  |      |acc   |↑  |0.5643|±  |0.0069|
+| - other          |      2|none  |      |acc   |↑  |0.6637|±  |0.0082|
+| - social sciences|      2|none  |      |acc   |↑  |0.6887|±  |0.0081|
+| - stem           |      2|none  |      |acc   |↑  |0.5094|±  |0.0086|
+
+✓ 완료: kmseong/llama3.1_8b_base-SSFT-start-WaRP-original-space-gsm8k-FT-lr3e-5 (task: mmlu)
+
+============================================================

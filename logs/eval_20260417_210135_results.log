@@ -1,0 +1,77 @@
+============================================================
+평가 결과 요약
+============================================================
+
+[1/8] 모델 평가 중: kmseong/llama2_7b_SSFT_gsm8k_FT_lr3e-5
+----------------------------------------
+|Tasks|Version|     Filter     |n-shot|  Metric   |   |Value |   |Stderr|
+|-----|------:|----------------|-----:|-----------|---|-----:|---|-----:|
+|gsm8k|      3|flexible-extract|     5|exact_match|↑  |0.3851|±  |0.0134|
+|     |       |strict-match    |     5|exact_match|↑  |0.3851|±  |0.0134|
+
+✓ 완료: kmseong/llama2_7b_SSFT_gsm8k_FT_lr3e-5 (task: gsm8k)
+
+[2/8] 모델 평가 중: kmseong/llama2_7b_only_sn_tuned_lr3e-5
+----------------------------------------
+|Tasks|Version|     Filter     |n-shot|  Metric   |   |Value |   |Stderr|
+|-----|------:|----------------|-----:|-----------|---|-----:|---|-----:|
+|gsm8k|      3|flexible-extract|     5|exact_match|↑  |0.0993|±  |0.0082|
+|     |       |strict-match    |     5|exact_match|↑  |0.0955|±  |0.0081|
+
+✓ 완료: kmseong/llama2_7b_only_sn_tuned_lr3e-5 (task: gsm8k)
+
+[3/8] 모델 평가 중: kmseong/llama2_7b_gsm8k_ft_freeze_sn_lr3e-5
+----------------------------------------
+|Tasks|Version|     Filter     |n-shot|  Metric   |   |Value |   |Stderr|
+|-----|------:|----------------|-----:|-----------|---|-----:|---|-----:|
+|gsm8k|      3|flexible-extract|     5|exact_match|↑  |0.4011|±  |0.0135|
+|     |       |strict-match    |     5|exact_match|↑  |0.3995|±  |0.0135|
+
+✓ 완료: kmseong/llama2_7b_gsm8k_ft_freeze_sn_lr3e-5 (task: gsm8k)
+
+[4/8] 모델 평가 중: kmseong/llama2_7B_SSFT_WaRP_safety_basis_gsm8k_FT_lr3e-5
+----------------------------------------
+|Tasks|Version|     Filter     |n-shot|  Metric   |   |Value |   |Stderr|
+|-----|------:|----------------|-----:|-----------|---|-----:|---|-----:|
+|gsm8k|      3|flexible-extract|     5|exact_match|↑  |0.3882|±  |0.0134|
+|     |       |strict-match    |     5|exact_match|↑  |0.3882|±  |0.0134|
+
+✓ 완료: kmseong/llama2_7B_SSFT_WaRP_safety_basis_gsm8k_FT_lr3e-5 (task: gsm8k)
+
+[5/8] 모델 평가 중: kmseong/llama2_7b_chat_SSFT_gsm8k_FT_lr3e-5
+----------------------------------------
+|Tasks|Version|     Filter     |n-shot|  Metric   |   |Value |   |Stderr|
+|-----|------:|----------------|-----:|-----------|---|-----:|---|-----:|
+|gsm8k|      3|flexible-extract|     5|exact_match|↑  |0.4086|±  |0.0135|
+|     |       |strict-match    |     5|exact_match|↑  |0.4071|±  |0.0135|
+
+✓ 완료: kmseong/llama2_7b_chat_SSFT_gsm8k_FT_lr3e-5 (task: gsm8k)
+
+[6/8] 모델 평가 중: kmseong/llama2_7b_chat_only_sn_tuned_lr3e-5
+----------------------------------------
+|Tasks|Version|     Filter     |n-shot|  Metric   |   |Value |   |Stderr|
+|-----|------:|----------------|-----:|-----------|---|-----:|---|-----:|
+|gsm8k|      3|flexible-extract|     5|exact_match|↑  |0.2593|±  |0.0121|
+|     |       |strict-match    |     5|exact_match|↑  |0.1865|±  |0.0107|
+
+✓ 완료: kmseong/llama2_7b_chat_only_sn_tuned_lr3e-5 (task: gsm8k)
+
+[7/8] 모델 평가 중: kmseong/llama2_7b_chat_gsm8k_ft_freeze_sn_lr3e-5
+----------------------------------------
+|Tasks|Version|     Filter     |n-shot|  Metric   |   |Value |   |Stderr|
+|-----|------:|----------------|-----:|-----------|---|-----:|---|-----:|
+|gsm8k|      3|flexible-extract|     5|exact_match|↑  |0.4132|±  |0.0136|
+|     |       |strict-match    |     5|exact_match|↑  |0.4132|±  |0.0136|
+
+✓ 완료: kmseong/llama2_7b_chat_gsm8k_ft_freeze_sn_lr3e-5 (task: gsm8k)
+
+[8/8] 모델 평가 중: kmseong/llama2_7B_chat_SSFT_WaRP_safety_basis_gsm8k_FT_lr3e-5
+----------------------------------------
+|Tasks|Version|     Filter     |n-shot|  Metric   |   |Value |   |Stderr|
+|-----|------:|----------------|-----:|-----------|---|-----:|---|-----:|
+|gsm8k|      3|flexible-extract|     5|exact_match|↑  |0.4056|±  |0.0135|
+|     |       |strict-match    |     5|exact_match|↑  |0.4041|±  |0.0135|
+
+✓ 완료: kmseong/llama2_7B_chat_SSFT_WaRP_safety_basis_gsm8k_FT_lr3e-5 (task: gsm8k)
+
+============================================================

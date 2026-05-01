@@ -1,0 +1,14 @@
+============================================================
+평가 결과 요약
+============================================================
+
+[1/1] 모델 평가 중: /home/yonsei_jong/Safety-Neuron/neuron_detection/full_finetune_instruct_gsm8k
+----------------------------------------
+|Tasks|Version|     Filter     |n-shot|  Metric   |   |Value |   |Stderr|
+|-----|------:|----------------|-----:|-----------|---|-----:|---|-----:|
+|gsm8k|      3|flexible-extract|     5|exact_match|↑  |0.7096|±  |0.0125|
+|     |       |strict-match    |     5|exact_match|↑  |0.7074|±  |0.0125|
+
+✓ 완료: /home/yonsei_jong/Safety-Neuron/neuron_detection/full_finetune_instruct_gsm8k (task: gsm8k)
+
+============================================================

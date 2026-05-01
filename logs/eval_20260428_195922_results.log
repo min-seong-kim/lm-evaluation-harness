@@ -1,0 +1,29 @@
+============================================================
+평가 결과 요약
+============================================================
+
+[1/3] 모델 평가 중: kmseong/llama3_2_3b_instruct_sn_tuned_math_ft_lr5e-5
+----------------------------------------
+|      Groups       |Version|Filter|n-shot|  Metric   |   |Value |   |Stderr|
+|-------------------|------:|------|------|-----------|---|-----:|---|-----:|
+|hendrycks_math_safe|      1|none  |      |exact_match|↑  |0.1982|±  |0.0055|
+
+✓ 완료: kmseong/llama3_2_3b_instruct_sn_tuned_math_ft_lr5e-5 (task: hendrycks_math_safe)
+
+[2/3] 모델 평가 중: kmseong/llama3_2_3b_instruct_rsn_tuned_math_ft_lr5e-5
+----------------------------------------
+|      Groups       |Version|Filter|n-shot|  Metric   |   |Value |   |Stderr|
+|-------------------|------:|------|------|-----------|---|-----:|---|-----:|
+|hendrycks_math_safe|      1|none  |      |exact_match|↑  |0.2082|±  |0.0056|
+
+✓ 완료: kmseong/llama3_2_3b_instruct_rsn_tuned_math_ft_lr5e-5 (task: hendrycks_math_safe)
+
+[3/3] 모델 평가 중: kmseong/llama3_2_3b_instruct_resta_0.3_lr5e-5
+----------------------------------------
+|      Groups       |Version|Filter|n-shot|  Metric   |   |Value |   |Stderr|
+|-------------------|------:|------|------|-----------|---|-----:|---|-----:|
+|hendrycks_math_safe|      1|none  |      |exact_match|↑  |0.1954|±  |0.0054|
+
+✓ 완료: kmseong/llama3_2_3b_instruct_resta_0.3_lr5e-5 (task: hendrycks_math_safe)
+
+============================================================

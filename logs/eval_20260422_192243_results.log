@@ -1,0 +1,23 @@
+============================================================
+평가 결과 요약
+============================================================
+
+[1/2] 모델 평가 중: kmseong/llama2_7b_chat_gsm8k_ft_freeze_sn_lr1e-4
+----------------------------------------
+|Tasks|Version|     Filter     |n-shot|  Metric   |   |Value |   |Stderr|
+|-----|------:|----------------|-----:|-----------|---|-----:|---|-----:|
+|gsm8k|      3|flexible-extract|     5|exact_match|↑  |0.3002|±  |0.0126|
+|     |       |strict-match    |     5|exact_match|↑  |0.3002|±  |0.0126|
+
+✓ 완료: kmseong/llama2_7b_chat_gsm8k_ft_freeze_sn_lr1e-4 (task: gsm8k)
+
+[2/2] 모델 평가 중: kmseong/llama2_7b_chat_gsm8k_ft_freeze_rsn_lr1e-4_new
+----------------------------------------
+|Tasks|Version|     Filter     |n-shot|  Metric   |   |Value |   |Stderr|
+|-----|------:|----------------|-----:|-----------|---|-----:|---|-----:|
+|gsm8k|      3|flexible-extract|     5|exact_match|↑  |0.3025|±  |0.0127|
+|     |       |strict-match    |     5|exact_match|↑  |0.2995|±  |0.0126|
+
+✓ 완료: kmseong/llama2_7b_chat_gsm8k_ft_freeze_rsn_lr1e-4_new (task: gsm8k)
+
+============================================================

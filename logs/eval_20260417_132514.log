@@ -1,0 +1,117 @@
+평가 시작 시간: Fri Apr 17 01:25:14 PM KST 2026
+고정 시드: 42
+
+
+==========================================
+[1/3] 모델 평가 중: meta-llama/Llama-2-7b-hf
+==========================================
+[1/3] task 평가 중: gsm8k
+2026-04-17:13:25:17 INFO     [_cli.run:376] Selected Tasks: ['gsm8k']
+2026-04-17:13:25:17 INFO     [evaluator:211] Setting random seed to 42 | Setting numpy seed to 42 | Setting torch manual seed to 42 | Setting fewshot manual seed to 42
+2026-04-17:13:25:17 INFO     [evaluator:236] Initializing vllm model, with arguments: {'pretrained': 'meta-llama/Llama-2-7b-hf', 'seed': 42, 'enforce_eager': True, 'enable_prefix_caching': False, 'tensor_parallel_size': 1, 'data_parallel_size': 1, 'dtype': 'auto', 'gpu_memory_utilization': 0.7}
+INFO 04-17 13:25:20 [utils.py:238] non-default args: {'seed': 42, 'enable_prefix_caching': False, 'gpu_memory_utilization': 0.7, 'disable_log_stats': True, 'enforce_eager': True, 'model': 'meta-llama/Llama-2-7b-hf'}
+INFO 04-17 13:25:21 [model.py:531] Resolved architecture: LlamaForCausalLM
+INFO 04-17 13:25:21 [model.py:1554] Using max model len 4096
+INFO 04-17 13:25:21 [scheduler.py:231] Chunked prefill is enabled with max_num_batched_tokens=16384.
+INFO 04-17 13:25:21 [vllm.py:747] Asynchronous scheduling is enabled.
+WARNING 04-17 13:25:21 [vllm.py:781] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none
+WARNING 04-17 13:25:21 [vllm.py:792] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.
+INFO 04-17 13:25:22 [vllm.py:957] Cudagraph is disabled under eager mode
+(EngineCore_DP0 pid=2948328) INFO 04-17 13:25:23 [core.py:101] Initializing a V1 LLM engine (v0.17.1) with config: model='meta-llama/Llama-2-7b-hf', speculative_config=None, tokenizer='meta-llama/Llama-2-7b-hf', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.float16, max_seq_len=4096, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=True, enable_return_routed_experts=False, kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_fallback=False, disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, kv_cache_metrics=False, kv_cache_metrics_sample=0.01, cudagraph_metrics=False, enable_layerwise_nvtx_tracing=False, enable_mfu_metrics=False, enable_mm_processor_stats=False, enable_logging_iteration_details=False), seed=42, served_model_name=meta-llama/Llama-2-7b-hf, enable_prefix_caching=False, enable_chunked_prefill=True, pooler_config=None, compilation_config={'level': None, 'mode': <CompilationMode.NONE: 0>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['all'], 'splitting_ops': [], 'compile_mm_encoder': False, 'compile_sizes': [], 'compile_ranges_split_points': [16384], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.NONE: 0>, 'cudagraph_num_of_warmups': 0, 'cudagraph_capture_sizes': [], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {'fuse_norm_quant': True, 'fuse_act_quant': True, 'fuse_attn_quant': False, 'enable_sp': False, 'fuse_gemm_comms': False, 'fuse_allreduce_rms': False}, 'max_cudagraph_capture_size': 0, 'dynamic_shapes_config': {'type': <DynamicShapesType.BACKED: 'backed'>, 'evaluate_guards': False, 'assume_32_bit_indexing': False}, 'local_cache_dir': None, 'fast_moe_cold_start': True, 'static_all_moe_layers': []}
+(EngineCore_DP0 pid=2948328) INFO 04-17 13:25:24 [parallel_state.py:1393] world_size=1 rank=0 local_rank=0 distributed_init_method=tcp://172.18.0.3:58173 backend=nccl
+(EngineCore_DP0 pid=2948328) INFO 04-17 13:25:24 [parallel_state.py:1715] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, EP rank N/A, EPLB rank N/A
+(EngineCore_DP0 pid=2948328) ERROR 04-17 13:25:24 [core.py:1100] EngineCore failed to start.
+(EngineCore_DP0 pid=2948328) ERROR 04-17 13:25:24 [core.py:1100] Traceback (most recent call last):
+(EngineCore_DP0 pid=2948328) ERROR 04-17 13:25:24 [core.py:1100]   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/v1/engine/core.py", line 1090, in run_engine_core
+(EngineCore_DP0 pid=2948328) ERROR 04-17 13:25:24 [core.py:1100]     engine_core = EngineCoreProc(*args, engine_index=dp_rank, **kwargs)
+(EngineCore_DP0 pid=2948328) ERROR 04-17 13:25:24 [core.py:1100]   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/tracing/otel.py", line 178, in sync_wrapper
+(EngineCore_DP0 pid=2948328) ERROR 04-17 13:25:24 [core.py:1100]     return func(*args, **kwargs)
+(EngineCore_DP0 pid=2948328) ERROR 04-17 13:25:24 [core.py:1100]   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/v1/engine/core.py", line 834, in __init__
+(EngineCore_DP0 pid=2948328) ERROR 04-17 13:25:24 [core.py:1100]     super().__init__(
+(EngineCore_DP0 pid=2948328) ERROR 04-17 13:25:24 [core.py:1100]   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/v1/engine/core.py", line 110, in __init__
+(EngineCore_DP0 pid=2948328) ERROR 04-17 13:25:24 [core.py:1100]     self.model_executor = executor_class(vllm_config)
+(EngineCore_DP0 pid=2948328) ERROR 04-17 13:25:24 [core.py:1100]   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/tracing/otel.py", line 178, in sync_wrapper
+(EngineCore_DP0 pid=2948328) ERROR 04-17 13:25:24 [core.py:1100]     return func(*args, **kwargs)
+(EngineCore_DP0 pid=2948328) ERROR 04-17 13:25:24 [core.py:1100]   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/v1/executor/abstract.py", line 103, in __init__
+(EngineCore_DP0 pid=2948328) ERROR 04-17 13:25:24 [core.py:1100]     self._init_executor()
+(EngineCore_DP0 pid=2948328) ERROR 04-17 13:25:24 [core.py:1100]   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/v1/executor/uniproc_executor.py", line 48, in _init_executor
+(EngineCore_DP0 pid=2948328) ERROR 04-17 13:25:24 [core.py:1100]     self.driver_worker.init_device()
+(EngineCore_DP0 pid=2948328) ERROR 04-17 13:25:24 [core.py:1100]   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/v1/worker/worker_base.py", line 326, in init_device
+(EngineCore_DP0 pid=2948328) ERROR 04-17 13:25:24 [core.py:1100]     self.worker.init_device()  # type: ignore
+(EngineCore_DP0 pid=2948328) ERROR 04-17 13:25:24 [core.py:1100]   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/tracing/otel.py", line 178, in sync_wrapper
+(EngineCore_DP0 pid=2948328) ERROR 04-17 13:25:24 [core.py:1100]     return func(*args, **kwargs)
+(EngineCore_DP0 pid=2948328) ERROR 04-17 13:25:24 [core.py:1100]   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/v1/worker/gpu_worker.py", line 285, in init_device
+(EngineCore_DP0 pid=2948328) ERROR 04-17 13:25:24 [core.py:1100]     self.requested_memory = request_memory(init_snapshot, self.cache_config)
+(EngineCore_DP0 pid=2948328) ERROR 04-17 13:25:24 [core.py:1100]   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/v1/worker/utils.py", line 413, in request_memory
+(EngineCore_DP0 pid=2948328) ERROR 04-17 13:25:24 [core.py:1100]     raise ValueError(
+(EngineCore_DP0 pid=2948328) ERROR 04-17 13:25:24 [core.py:1100] ValueError: Free memory on device cuda:0 (56.11/178.35 GiB) on startup is less than desired GPU memory utilization (0.7, 124.85 GiB). Decrease GPU memory utilization or reduce GPU memory used by other processes.
+(EngineCore_DP0 pid=2948328) Process EngineCore_DP0:
+(EngineCore_DP0 pid=2948328) Traceback (most recent call last):
+(EngineCore_DP0 pid=2948328)   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+(EngineCore_DP0 pid=2948328)     self.run()
+(EngineCore_DP0 pid=2948328)   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/multiprocessing/process.py", line 108, in run
+(EngineCore_DP0 pid=2948328)     self._target(*self._args, **self._kwargs)
+(EngineCore_DP0 pid=2948328)   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/v1/engine/core.py", line 1104, in run_engine_core
+(EngineCore_DP0 pid=2948328)     raise e
+(EngineCore_DP0 pid=2948328)   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/v1/engine/core.py", line 1090, in run_engine_core
+(EngineCore_DP0 pid=2948328)     engine_core = EngineCoreProc(*args, engine_index=dp_rank, **kwargs)
+(EngineCore_DP0 pid=2948328)   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/tracing/otel.py", line 178, in sync_wrapper
+(EngineCore_DP0 pid=2948328)     return func(*args, **kwargs)
+(EngineCore_DP0 pid=2948328)   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/v1/engine/core.py", line 834, in __init__
+(EngineCore_DP0 pid=2948328)     super().__init__(
+(EngineCore_DP0 pid=2948328)   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/v1/engine/core.py", line 110, in __init__
+(EngineCore_DP0 pid=2948328)     self.model_executor = executor_class(vllm_config)
+(EngineCore_DP0 pid=2948328)   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/tracing/otel.py", line 178, in sync_wrapper
+(EngineCore_DP0 pid=2948328)     return func(*args, **kwargs)
+(EngineCore_DP0 pid=2948328)   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/v1/executor/abstract.py", line 103, in __init__
+(EngineCore_DP0 pid=2948328)     self._init_executor()
+(EngineCore_DP0 pid=2948328)   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/v1/executor/uniproc_executor.py", line 48, in _init_executor
+(EngineCore_DP0 pid=2948328)     self.driver_worker.init_device()
+(EngineCore_DP0 pid=2948328)   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/v1/worker/worker_base.py", line 326, in init_device
+(EngineCore_DP0 pid=2948328)     self.worker.init_device()  # type: ignore
+(EngineCore_DP0 pid=2948328)   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/tracing/otel.py", line 178, in sync_wrapper
+(EngineCore_DP0 pid=2948328)     return func(*args, **kwargs)
+(EngineCore_DP0 pid=2948328)   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/v1/worker/gpu_worker.py", line 285, in init_device
+(EngineCore_DP0 pid=2948328)     self.requested_memory = request_memory(init_snapshot, self.cache_config)
+(EngineCore_DP0 pid=2948328)   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/v1/worker/utils.py", line 413, in request_memory
+(EngineCore_DP0 pid=2948328)     raise ValueError(
+(EngineCore_DP0 pid=2948328) ValueError: Free memory on device cuda:0 (56.11/178.35 GiB) on startup is less than desired GPU memory utilization (0.7, 124.85 GiB). Decrease GPU memory utilization or reduce GPU memory used by other processes.
+Traceback (most recent call last):
+  File "/home/yonsei_jong/miniconda3/envs/hb/bin/lm_eval", line 7, in <module>
+    sys.exit(cli_evaluate())
+  File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/lm_eval/__main__.py", line 10, in cli_evaluate
+    parser.execute(args)
+  File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/lm_eval/_cli/harness.py", line 60, in execute
+    args.func(args)
+  File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/lm_eval/_cli/run.py", line 379, in _execute
+    results = simple_evaluate(
+  File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/lm_eval/utils.py", line 498, in _wrapper
+    return fn(*args, **kwargs)
+  File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/lm_eval/evaluator.py", line 239, in simple_evaluate
+    lm = lm_eval.api.registry.get_model(model).create_from_arg_obj(
+  File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/lm_eval/api/model.py", line 180, in create_from_arg_obj
+    return cls(**arg_dict, **additional_config)
+  File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/lm_eval/models/vllm_causallms.py", line 202, in __init__
+    self.model = LLM(**self.model_args)  # type: ignore[invalid-argument-type]
+  File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/entrypoints/llm.py", line 379, in __init__
+    self.llm_engine = LLMEngine.from_engine_args(
+  File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/v1/engine/llm_engine.py", line 177, in from_engine_args
+    return cls(
+  File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/v1/engine/llm_engine.py", line 111, in __init__
+    self.engine_core = EngineCoreClient.make_client(
+  File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/v1/engine/core_client.py", line 98, in make_client
+    return SyncMPClient(vllm_config, executor_class, log_stats)
+  File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/tracing/otel.py", line 178, in sync_wrapper
+    return func(*args, **kwargs)
+  File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/v1/engine/core_client.py", line 734, in __init__
+    super().__init__(
+  File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/v1/engine/core_client.py", line 569, in __init__
+    with launch_core_engines(
+  File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/contextlib.py", line 142, in __exit__
+    next(self.gen)
+  File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/v1/engine/utils.py", line 951, in launch_core_engines
+    wait_for_engine_startup(
+  File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/v1/engine/utils.py", line 1010, in wait_for_engine_startup
+    raise RuntimeError(
+RuntimeError: Engine core initialization failed. See root cause above. Failed core proc(s): {}
+✗ 실패: meta-llama/Llama-2-7b-hf (task: gsm8k) - 종료 코드: 1

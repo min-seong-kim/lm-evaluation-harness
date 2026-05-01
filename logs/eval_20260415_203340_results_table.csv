@@ -1,0 +1,4 @@
+model,math_exact_match
+meta-llama/Llama-3.1-8B-Instruct,0.1100±0.0044
+kmseong/llama3.1_8b_instruct_MATH_FT_lr3e-5,0.2138±0.0056
+kmseong/llama3.1_8b_instruct-WaRP-safety-basis-MATH-FT-lr3e-5,0.2212±0.0057

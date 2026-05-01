@@ -1,0 +1,29 @@
+============================================================
+평가 결과 요약
+============================================================
+
+[1/2] 모델 평가 중: kmseong/llama2_7b-chat-Safety-FT-lr5e-5
+----------------------------------------
+|      Groups      |Version|Filter|n-shot|Metric|   |Value |   |Stderr|
+|------------------|------:|------|------|------|---|-----:|---|-----:|
+|mmlu              |      2|none  |      |acc   |↑  |0.4467|±  |0.0041|
+| - humanities     |      2|none  |      |acc   |↑  |0.4013|±  |0.0069|
+| - other          |      2|none  |      |acc   |↑  |0.5372|±  |0.0087|
+| - social sciences|      2|none  |      |acc   |↑  |0.5158|±  |0.0088|
+| - stem           |      2|none  |      |acc   |↑  |0.3581|±  |0.0084|
+
+✓ 완료: kmseong/llama2_7b-chat-Safety-FT-lr5e-5 (task: mmlu)
+
+[2/2] 모델 평가 중: kmseong/llama2_7b_chat-SSFT-MMLU-FT-lr3e-5
+----------------------------------------
+|      Groups      |Version|Filter|n-shot|Metric|   |Value |   |Stderr|
+|------------------|------:|------|------|------|---|-----:|---|-----:|
+|mmlu              |      2|none  |      |acc   |↑  |0.5224|±  |0.0040|
+| - humanities     |      2|none  |      |acc   |↑  |0.4925|±  |0.0069|
+| - other          |      2|none  |      |acc   |↑  |0.5880|±  |0.0086|
+| - social sciences|      2|none  |      |acc   |↑  |0.6016|±  |0.0086|
+| - stem           |      2|none  |      |acc   |↑  |0.4250|±  |0.0087|
+
+✓ 완료: kmseong/llama2_7b_chat-SSFT-MMLU-FT-lr3e-5 (task: mmlu)
+
+============================================================

@@ -1,0 +1,23 @@
+============================================================
+평가 결과 요약
+============================================================
+
+[1/2] 모델 평가 중: kmseong/llama2_7b_base_only_rsn_tuned_lr3e-5
+----------------------------------------
+|Tasks|Version|     Filter     |n-shot|  Metric   |   |Value |   |Stderr|
+|-----|------:|----------------|-----:|-----------|---|-----:|---|-----:|
+|gsm8k|      3|flexible-extract|     5|exact_match|↑  |0.1099|±  |0.0086|
+|     |       |strict-match    |     5|exact_match|↑  |0.1054|±  |0.0085|
+
+✓ 완료: kmseong/llama2_7b_base_only_rsn_tuned_lr3e-5 (task: gsm8k)
+
+[2/2] 모델 평가 중: kmseong/llama2_7b_base_gsm8k_ft_freeze_rsn_lr25e-6
+----------------------------------------
+|Tasks|Version|     Filter     |n-shot|  Metric   |   |Value |   |Stderr|
+|-----|------:|----------------|-----:|-----------|---|-----:|---|-----:|
+|gsm8k|      3|flexible-extract|     5|exact_match|↑  |0.1729|±  |0.0104|
+|     |       |strict-match    |     5|exact_match|↑  |0.1721|±  |0.0104|
+
+✓ 완료: kmseong/llama2_7b_base_gsm8k_ft_freeze_rsn_lr25e-6 (task: gsm8k)
+
+============================================================

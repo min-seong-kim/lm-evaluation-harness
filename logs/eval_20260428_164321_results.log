@@ -1,0 +1,21 @@
+============================================================
+평가 결과 요약
+============================================================
+
+[1/2] 모델 평가 중: meta-llama/Llama-3.2-3B-Instruct
+----------------------------------------
+|      Groups       |Version|Filter|n-shot|  Metric   |   |Value |   |Stderr|
+|-------------------|------:|------|------|-----------|---|-----:|---|-----:|
+|hendrycks_math_safe|      1|none  |      |exact_match|↑  |0.0922|±  |0.0041|
+
+✓ 완료: meta-llama/Llama-3.2-3B-Instruct (task: hendrycks_math_safe)
+
+[2/2] 모델 평가 중: kmseong/llama3_2_3b_instruct_MATH_lr5e-5
+----------------------------------------
+|      Groups       |Version|Filter|n-shot|  Metric   |   |Value|   |Stderr|
+|-------------------|------:|------|------|-----------|---|----:|---|-----:|
+|hendrycks_math_safe|      1|none  |      |exact_match|↑  |0.203|±  |0.0055|
+
+✓ 완료: kmseong/llama3_2_3b_instruct_MATH_lr5e-5 (task: hendrycks_math_safe)
+
+============================================================

@@ -1,0 +1,173 @@
+============================================================
+평가 결과 요약
+============================================================
+
+[1/7] 모델 평가 중: kmseong/llama3.1_8b_base-Safety-FT-lr3e-5
+----------------------------------------
+|Tasks|Version|     Filter     |n-shot|  Metric   |   |Value |   |Stderr|
+|-----|------:|----------------|-----:|-----------|---|-----:|---|-----:|
+|gsm8k|      3|flexible-extract|     5|exact_match|↑  |0.4049|±  |0.0135|
+|     |       |strict-match    |     5|exact_match|↑  |0.3988|±  |0.0135|
+
+✓ 완료: kmseong/llama3.1_8b_base-Safety-FT-lr3e-5 (task: gsm8k)
+|    Tasks    |Version|Filter|n-shot| Metric |   |Value |   |Stderr|
+|-------------|------:|------|-----:|--------|---|-----:|---|-----:|
+|arc_challenge|      1|none  |     5|acc     |↑  |0.4582|±  |0.0146|
+|             |       |none  |     5|acc_norm|↑  |0.4991|±  |0.0146|
+
+✓ 완료: kmseong/llama3.1_8b_base-Safety-FT-lr3e-5 (task: arc-c)
+|      Groups      |Version|Filter|n-shot|Metric|   |Value |   |Stderr|
+|------------------|------:|------|------|------|---|-----:|---|-----:|
+|mmlu              |      2|none  |      |acc   |↑  |0.6072|±  |0.0039|
+| - humanities     |      2|none  |      |acc   |↑  |0.5605|±  |0.0069|
+| - other          |      2|none  |      |acc   |↑  |0.6704|±  |0.0081|
+| - social sciences|      2|none  |      |acc   |↑  |0.7085|±  |0.0080|
+| - stem           |      2|none  |      |acc   |↑  |0.5160|±  |0.0086|
+
+✓ 완료: kmseong/llama3.1_8b_base-Safety-FT-lr3e-5 (task: mmlu)
+
+[2/7] 모델 평가 중: kmseong/llama3.1_8b_base_gsm8k_after_SSFT_lr3e-5
+----------------------------------------
+|Tasks|Version|     Filter     |n-shot|  Metric   |   |Value |   |Stderr|
+|-----|------:|----------------|-----:|-----------|---|-----:|---|-----:|
+|gsm8k|      3|flexible-extract|     5|exact_match|↑  |0.5694|±  |0.0136|
+|     |       |strict-match    |     5|exact_match|↑  |0.5686|±  |0.0136|
+
+✓ 완료: kmseong/llama3.1_8b_base_gsm8k_after_SSFT_lr3e-5 (task: gsm8k)
+|    Tasks    |Version|Filter|n-shot| Metric |   |Value |   |Stderr|
+|-------------|------:|------|-----:|--------|---|-----:|---|-----:|
+|arc_challenge|      1|none  |     5|acc     |↑  |0.4855|±  |0.0146|
+|             |       |none  |     5|acc_norm|↑  |0.5188|±  |0.0146|
+
+✓ 완료: kmseong/llama3.1_8b_base_gsm8k_after_SSFT_lr3e-5 (task: arc-c)
+|      Groups      |Version|Filter|n-shot|Metric|   |Value |   |Stderr|
+|------------------|------:|------|------|------|---|-----:|---|-----:|
+|mmlu              |      2|none  |      |acc   |↑  |0.5788|±  |0.0040|
+| - humanities     |      2|none  |      |acc   |↑  |0.5328|±  |0.0069|
+| - other          |      2|none  |      |acc   |↑  |0.6466|±  |0.0083|
+| - social sciences|      2|none  |      |acc   |↑  |0.6721|±  |0.0082|
+| - stem           |      2|none  |      |acc   |↑  |0.4894|±  |0.0086|
+
+✓ 완료: kmseong/llama3.1_8b_base_gsm8k_after_SSFT_lr3e-5 (task: mmlu)
+
+[3/7] 모델 평가 중: kmseong/llama3.1_8b_base_only_sn_tuned_lr3e-5
+----------------------------------------
+|Tasks|Version|     Filter     |n-shot|  Metric   |   |Value |   |Stderr|
+|-----|------:|----------------|-----:|-----------|---|-----:|---|-----:|
+|gsm8k|      3|flexible-extract|     5|exact_match|↑  |0.3245|±  |0.0129|
+|     |       |strict-match    |     5|exact_match|↑  |0.3207|±  |0.0129|
+
+✓ 완료: kmseong/llama3.1_8b_base_only_sn_tuned_lr3e-5 (task: gsm8k)
+|    Tasks    |Version|Filter|n-shot| Metric |   |Value |   |Stderr|
+|-------------|------:|------|-----:|--------|---|-----:|---|-----:|
+|arc_challenge|      1|none  |     5|acc     |↑  |0.5538|±  |0.0145|
+|             |       |none  |     5|acc_norm|↑  |0.5922|±  |0.0144|
+
+✓ 완료: kmseong/llama3.1_8b_base_only_sn_tuned_lr3e-5 (task: arc-c)
+|      Groups      |Version|Filter|n-shot|Metric|   |Value |   |Stderr|
+|------------------|------:|------|------|------|---|-----:|---|-----:|
+|mmlu              |      2|none  |      |acc   |↑  |0.6555|±  |0.0038|
+| - humanities     |      2|none  |      |acc   |↑  |0.6002|±  |0.0068|
+| - other          |      2|none  |      |acc   |↑  |0.7213|±  |0.0077|
+| - social sciences|      2|none  |      |acc   |↑  |0.7660|±  |0.0074|
+| - stem           |      2|none  |      |acc   |↑  |0.5652|±  |0.0085|
+
+✓ 완료: kmseong/llama3.1_8b_base_only_sn_tuned_lr3e-5 (task: mmlu)
+
+[4/7] 모델 평가 중: kmseong/llama3.1_8b_base_gsm8k_ft_freeze_sn_lr3e-5
+----------------------------------------
+|Tasks|Version|     Filter     |n-shot|  Metric   |   |Value |   |Stderr|
+|-----|------:|----------------|-----:|-----------|---|-----:|---|-----:|
+|gsm8k|      3|flexible-extract|     5|exact_match|↑  |0.6035|±  |0.0135|
+|     |       |strict-match    |     5|exact_match|↑  |0.6020|±  |0.0135|
+
+✓ 완료: kmseong/llama3.1_8b_base_gsm8k_ft_freeze_sn_lr3e-5 (task: gsm8k)
+|    Tasks    |Version|Filter|n-shot| Metric |   |Value |   |Stderr|
+|-------------|------:|------|-----:|--------|---|-----:|---|-----:|
+|arc_challenge|      1|none  |     5|acc     |↑  |0.4991|±  |0.0146|
+|             |       |none  |     5|acc_norm|↑  |0.5256|±  |0.0146|
+
+✓ 완료: kmseong/llama3.1_8b_base_gsm8k_ft_freeze_sn_lr3e-5 (task: arc-c)
+|      Groups      |Version|Filter|n-shot|Metric|   |Value |   |Stderr|
+|------------------|------:|------|------|------|---|-----:|---|-----:|
+|mmlu              |      2|none  |      |acc   |↑  |0.6164|±  |0.0039|
+| - humanities     |      2|none  |      |acc   |↑  |0.5611|±  |0.0068|
+| - other          |      2|none  |      |acc   |↑  |0.6888|±  |0.0080|
+| - social sciences|      2|none  |      |acc   |↑  |0.7150|±  |0.0079|
+| - stem           |      2|none  |      |acc   |↑  |0.5316|±  |0.0086|
+
+✓ 완료: kmseong/llama3.1_8b_base_gsm8k_ft_freeze_sn_lr3e-5 (task: mmlu)
+
+[5/7] 모델 평가 중: kmseong/llama3.1_8b_base_only_rsn_tuned_lr3e-5
+----------------------------------------
+|Tasks|Version|     Filter     |n-shot|  Metric   |   |Value |   |Stderr|
+|-----|------:|----------------|-----:|-----------|---|-----:|---|-----:|
+|gsm8k|      3|flexible-extract|     5|exact_match|↑  |0.2911|±  |0.0125|
+|     |       |strict-match    |     5|exact_match|↑  |0.2919|±  |0.0125|
+
+✓ 완료: kmseong/llama3.1_8b_base_only_rsn_tuned_lr3e-5 (task: gsm8k)
+|    Tasks    |Version|Filter|n-shot| Metric |   |Value |   |Stderr|
+|-------------|------:|------|-----:|--------|---|-----:|---|-----:|
+|arc_challenge|      1|none  |     5|acc     |↑  |0.5597|±  |0.0145|
+|             |       |none  |     5|acc_norm|↑  |0.5879|±  |0.0144|
+
+✓ 완료: kmseong/llama3.1_8b_base_only_rsn_tuned_lr3e-5 (task: arc-c)
+|      Groups      |Version|Filter|n-shot|Metric|   |Value |   |Stderr|
+|------------------|------:|------|------|------|---|-----:|---|-----:|
+|mmlu              |      2|none  |      |acc   |↑  |0.6572|±  |0.0038|
+| - humanities     |      2|none  |      |acc   |↑  |0.5989|±  |0.0068|
+| - other          |      2|none  |      |acc   |↑  |0.7245|±  |0.0077|
+| - social sciences|      2|none  |      |acc   |↑  |0.7693|±  |0.0074|
+| - stem           |      2|none  |      |acc   |↑  |0.5683|±  |0.0085|
+
+✓ 완료: kmseong/llama3.1_8b_base_only_rsn_tuned_lr3e-5 (task: mmlu)
+
+[6/7] 모델 평가 중: kmseong/llama3.1_8b_base_gsm8k_ft_freeze_rsn_lr3e-5
+----------------------------------------
+|Tasks|Version|     Filter     |n-shot|  Metric   |   |Value |   |Stderr|
+|-----|------:|----------------|-----:|-----------|---|-----:|---|-----:|
+|gsm8k|      3|flexible-extract|     5|exact_match|↑  |0.5929|±  |0.0135|
+|     |       |strict-match    |     5|exact_match|↑  |0.5936|±  |0.0135|
+
+✓ 완료: kmseong/llama3.1_8b_base_gsm8k_ft_freeze_rsn_lr3e-5 (task: gsm8k)
+|    Tasks    |Version|Filter|n-shot| Metric |   |Value |   |Stderr|
+|-------------|------:|------|-----:|--------|---|-----:|---|-----:|
+|arc_challenge|      1|none  |     5|acc     |↑  |0.4855|±  |0.0146|
+|             |       |none  |     5|acc_norm|↑  |0.5273|±  |0.0146|
+
+✓ 완료: kmseong/llama3.1_8b_base_gsm8k_ft_freeze_rsn_lr3e-5 (task: arc-c)
+|      Groups      |Version|Filter|n-shot|Metric|   |Value |   |Stderr|
+|------------------|------:|------|------|------|---|-----:|---|-----:|
+|mmlu              |      2|none  |      |acc   |↑  |0.6129|±  |0.0039|
+| - humanities     |      2|none  |      |acc   |↑  |0.5728|±  |0.0068|
+| - other          |      2|none  |      |acc   |↑  |0.6743|±  |0.0081|
+| - social sciences|      2|none  |      |acc   |↑  |0.7082|±  |0.0080|
+| - stem           |      2|none  |      |acc   |↑  |0.5192|±  |0.0086|
+
+✓ 완료: kmseong/llama3.1_8b_base_gsm8k_ft_freeze_rsn_lr3e-5 (task: mmlu)
+
+[7/7] 모델 평가 중: kmseong/llama3.1_8b_base-WaRP-safety-basis-gsm8k-FT-lr3e-5
+----------------------------------------
+|Tasks|Version|     Filter     |n-shot|  Metric   |   |Value |   |Stderr|
+|-----|------:|----------------|-----:|-----------|---|-----:|---|-----:|
+|gsm8k|      3|flexible-extract|     5|exact_match|↑  |0.6187|±  |0.0134|
+|     |       |strict-match    |     5|exact_match|↑  |0.6187|±  |0.0134|
+
+✓ 완료: kmseong/llama3.1_8b_base-WaRP-safety-basis-gsm8k-FT-lr3e-5 (task: gsm8k)
+|    Tasks    |Version|Filter|n-shot| Metric |   |Value |   |Stderr|
+|-------------|------:|------|-----:|--------|---|-----:|---|-----:|
+|arc_challenge|      1|none  |     5|acc     |↑  |0.4863|±  |0.0146|
+|             |       |none  |     5|acc_norm|↑  |0.5205|±  |0.0146|
+
+✓ 완료: kmseong/llama3.1_8b_base-WaRP-safety-basis-gsm8k-FT-lr3e-5 (task: arc-c)
+|      Groups      |Version|Filter|n-shot|Metric|   |Value |   |Stderr|
+|------------------|------:|------|------|------|---|-----:|---|-----:|
+|mmlu              |      2|none  |      |acc   |↑  |0.6039|±  |0.0039|
+| - humanities     |      2|none  |      |acc   |↑  |0.5664|±  |0.0069|
+| - other          |      2|none  |      |acc   |↑  |0.6650|±  |0.0082|
+| - social sciences|      2|none  |      |acc   |↑  |0.6906|±  |0.0081|
+| - stem           |      2|none  |      |acc   |↑  |0.5151|±  |0.0086|
+
+✓ 완료: kmseong/llama3.1_8b_base-WaRP-safety-basis-gsm8k-FT-lr3e-5 (task: mmlu)
+
+============================================================

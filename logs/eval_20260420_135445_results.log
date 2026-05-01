@@ -1,0 +1,29 @@
+============================================================
+평가 결과 요약
+============================================================
+
+[1/3] 모델 평가 중: kmseong/llama3.1_8b_instruct-WaRP-original-space-math-FT-lr1e-5_new
+----------------------------------------
+|      Groups       |Version|Filter|n-shot|  Metric   |   |Value |   |Stderr|
+|-------------------|------:|------|------|-----------|---|-----:|---|-----:|
+|hendrycks_math_safe|      1|none  |      |exact_match|↑  |0.2436|±  |0.0059|
+
+✓ 완료: kmseong/llama3.1_8b_instruct-WaRP-original-space-math-FT-lr1e-5_new (task: hendrycks_math_safe)
+
+[2/3] 모델 평가 중: kmseong/llama3.1_8b_instruct_math_ft_after_ssft_lr1e-5
+----------------------------------------
+|      Groups       |Version|Filter|n-shot|  Metric   |   |Value |   |Stderr|
+|-------------------|------:|------|------|-----------|---|-----:|---|-----:|
+|hendrycks_math_safe|      1|none  |      |exact_match|↑  |0.2548|±  |0.0059|
+
+✓ 완료: kmseong/llama3.1_8b_instruct_math_ft_after_ssft_lr1e-5 (task: hendrycks_math_safe)
+
+[3/3] 모델 평가 중: kmseong/llama3.1_8b_instruct_math_ft_freeze_rsn_lr1e-5_new
+----------------------------------------
+|      Groups       |Version|Filter|n-shot|  Metric   |   |Value |   |Stderr|
+|-------------------|------:|------|------|-----------|---|-----:|---|-----:|
+|hendrycks_math_safe|      1|none  |      |exact_match|↑  |0.2338|±  |0.0058|
+
+✓ 완료: kmseong/llama3.1_8b_instruct_math_ft_freeze_rsn_lr1e-5_new (task: hendrycks_math_safe)
+
+============================================================

@@ -1,0 +1,23 @@
+============================================================
+평가 결과 요약
+============================================================
+
+[1/2] 모델 평가 중: kmseong/llama2-7b-safe-lora-num_5_gsm8k
+----------------------------------------
+|Tasks|Version|     Filter     |n-shot|  Metric   |   |Value |   |Stderr|
+|-----|------:|----------------|-----:|-----------|---|-----:|---|-----:|
+|gsm8k|      3|flexible-extract|     5|exact_match|↑  |0.2396|±  |0.0118|
+|     |       |strict-match    |     5|exact_match|↑  |0.2418|±  |0.0118|
+
+✓ 완료: kmseong/llama2-7b-safe-lora-num_5_gsm8k (task: gsm8k)
+
+[2/2] 모델 평가 중: kmseong/llama2-7b-safe-lora-num_10_gsm8k
+----------------------------------------
+|Tasks|Version|     Filter     |n-shot|  Metric   |   |Value |   |Stderr|
+|-----|------:|----------------|-----:|-----------|---|-----:|---|-----:|
+|gsm8k|      3|flexible-extract|     5|exact_match|↑  |0.2434|±  |0.0118|
+|     |       |strict-match    |     5|exact_match|↑  |0.2540|±  |0.0120|
+
+✓ 완료: kmseong/llama2-7b-safe-lora-num_10_gsm8k (task: gsm8k)
+
+============================================================

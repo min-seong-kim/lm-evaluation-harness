@@ -1,0 +1,76 @@
+평가 시작 시간: Tue Apr 21 09:37:39 PM KST 2026
+고정 시드: 42
+
+
+==========================================
+[1/1] 모델 평가 중: kmseong/llama3.1_8b_instruct_WaRP_original_space_3e-5
+==========================================
+[1/3] task 평가 중: gsm8k
+2026-04-21:21:37:39 INFO     [config.evaluate_config:301] Using default fewshot_as_multiturn=True.
+2026-04-21:21:37:42 INFO     [_cli.run:376] Selected Tasks: ['gsm8k']
+2026-04-21:21:37:42 INFO     [evaluator:211] Setting random seed to 42 | Setting numpy seed to 42 | Setting torch manual seed to 42 | Setting fewshot manual seed to 42
+2026-04-21:21:37:42 INFO     [evaluator:236] Initializing vllm model, with arguments: {'pretrained': 'kmseong/llama3.1_8b_instruct_WaRP_original_space_3e-5', 'seed': 42, 'enforce_eager': True, 'enable_prefix_caching': False, 'tensor_parallel_size': 1, 'data_parallel_size': 1, 'dtype': 'auto', 'gpu_memory_utilization': 0.3}
+INFO 04-21 21:37:45 [utils.py:238] non-default args: {'seed': 42, 'enable_prefix_caching': False, 'gpu_memory_utilization': 0.3, 'disable_log_stats': True, 'enforce_eager': True, 'model': 'kmseong/llama3.1_8b_instruct_WaRP_original_space_3e-5'}
+INFO 04-21 21:37:46 [model.py:531] Resolved architecture: LlamaForCausalLM
+INFO 04-21 21:37:46 [model.py:1554] Using max model len 131072
+INFO 04-21 21:37:46 [scheduler.py:231] Chunked prefill is enabled with max_num_batched_tokens=16384.
+INFO 04-21 21:37:46 [vllm.py:747] Asynchronous scheduling is enabled.
+WARNING 04-21 21:37:46 [vllm.py:781] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none
+WARNING 04-21 21:37:46 [vllm.py:792] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.
+INFO 04-21 21:37:47 [vllm.py:957] Cudagraph is disabled under eager mode
+(EngineCore_DP0 pid=279781) INFO 04-21 21:37:48 [core.py:101] Initializing a V1 LLM engine (v0.17.1) with config: model='kmseong/llama3.1_8b_instruct_WaRP_original_space_3e-5', speculative_config=None, tokenizer='kmseong/llama3.1_8b_instruct_WaRP_original_space_3e-5', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=131072, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=True, enable_return_routed_experts=False, kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_fallback=False, disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, kv_cache_metrics=False, kv_cache_metrics_sample=0.01, cudagraph_metrics=False, enable_layerwise_nvtx_tracing=False, enable_mfu_metrics=False, enable_mm_processor_stats=False, enable_logging_iteration_details=False), seed=42, served_model_name=kmseong/llama3.1_8b_instruct_WaRP_original_space_3e-5, enable_prefix_caching=False, enable_chunked_prefill=True, pooler_config=None, compilation_config={'level': None, 'mode': <CompilationMode.NONE: 0>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['all'], 'splitting_ops': [], 'compile_mm_encoder': False, 'compile_sizes': [], 'compile_ranges_split_points': [16384], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.NONE: 0>, 'cudagraph_num_of_warmups': 0, 'cudagraph_capture_sizes': [], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {'fuse_norm_quant': True, 'fuse_act_quant': True, 'fuse_attn_quant': False, 'enable_sp': False, 'fuse_gemm_comms': False, 'fuse_allreduce_rms': False}, 'max_cudagraph_capture_size': 0, 'dynamic_shapes_config': {'type': <DynamicShapesType.BACKED: 'backed'>, 'evaluate_guards': False, 'assume_32_bit_indexing': False}, 'local_cache_dir': None, 'fast_moe_cold_start': True, 'static_all_moe_layers': []}
+(EngineCore_DP0 pid=279781) INFO 04-21 21:37:50 [parallel_state.py:1393] world_size=1 rank=0 local_rank=0 distributed_init_method=tcp://172.18.0.3:48125 backend=nccl
+(EngineCore_DP0 pid=279781) INFO 04-21 21:37:50 [parallel_state.py:1715] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, EP rank N/A, EPLB rank N/A
+(EngineCore_DP0 pid=279781) INFO 04-21 21:37:50 [base.py:106] Offloader set to NoopOffloader
+(EngineCore_DP0 pid=279781) INFO 04-21 21:37:50 [gpu_model_runner.py:4281] Starting to load model kmseong/llama3.1_8b_instruct_WaRP_original_space_3e-5...
+(EngineCore_DP0 pid=279781) INFO 04-21 21:37:51 [cuda.py:405] Using FLASHINFER attention backend out of potential backends: ['FLASHINFER', 'FLASH_ATTN', 'TRITON_ATTN', 'FLEX_ATTENTION'].
+(EngineCore_DP0 pid=279781) INFO 04-21 21:37:51 [selector.py:119] Using HND KV cache layout for FLASHINFER backend.
+(EngineCore_DP0 pid=279781) Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00<?, ?it/s]
+(EngineCore_DP0 pid=279781) Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00<00:00,  3.60it/s]
+(EngineCore_DP0 pid=279781) Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:00<00:00,  3.62it/s]
+(EngineCore_DP0 pid=279781) Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:00<00:00,  2.96it/s]
+(EngineCore_DP0 pid=279781) Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:01<00:00,  4.03it/s]
+(EngineCore_DP0 pid=279781) Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:01<00:00,  3.72it/s]
+(EngineCore_DP0 pid=279781) 
+(EngineCore_DP0 pid=279781) INFO 04-21 21:37:53 [default_loader.py:293] Loading weights took 1.09 seconds
+(EngineCore_DP0 pid=279781) INFO 04-21 21:37:54 [gpu_model_runner.py:4364] Model loading took 14.99 GiB memory and 2.762209 seconds
+(EngineCore_DP0 pid=279781) INFO 04-21 21:37:55 [gpu_worker.py:424] Available KV cache memory: 36.45 GiB
+(EngineCore_DP0 pid=279781) INFO 04-21 21:37:55 [kv_cache_utils.py:1314] GPU KV cache size: 298,576 tokens
+(EngineCore_DP0 pid=279781) INFO 04-21 21:37:55 [kv_cache_utils.py:1319] Maximum concurrency for 131,072 tokens per request: 2.28x
+(EngineCore_DP0 pid=279781) INFO 04-21 21:37:55 [utils.py:59] `_KV_CACHE_LAYOUT_OVERRIDE` variable detected. Setting KV cache layout to HND.
+(EngineCore_DP0 pid=279781) 2026-04-21 21:37:55,894 - INFO - autotuner.py:256 - flashinfer.jit: [Autotuner]: Autotuning process starts ...
+(EngineCore_DP0 pid=279781) 2026-04-21 21:37:55,901 - INFO - autotuner.py:262 - flashinfer.jit: [Autotuner]: Autotuning process ends
+(EngineCore_DP0 pid=279781) INFO 04-21 21:37:55 [kernel_warmup.py:69] Warming up FlashInfer attention.
+(EngineCore_DP0 pid=279781) WARNING 04-21 21:37:55 [flashinfer.py:384] Using TRTLLM prefill attention (auto-detected).
+(EngineCore_DP0 pid=279781) INFO 04-21 21:37:56 [core.py:282] init engine (profile, create kv cache, warmup model) took 1.67 seconds
+(EngineCore_DP0 pid=279781) WARNING 04-21 21:37:57 [vllm.py:781] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none
+(EngineCore_DP0 pid=279781) WARNING 04-21 21:37:57 [vllm.py:792] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.
+(EngineCore_DP0 pid=279781) INFO 04-21 21:37:57 [vllm.py:957] Cudagraph is disabled under eager mode
+INFO 04-21 21:37:57 [llm.py:388] Supported tasks: ['generate']
+2026-04-21:21:38:04 INFO     [tasks:700] Selected tasks:
+2026-04-21:21:38:04 INFO     [tasks:691] Task: gsm8k (gsm8k/gsm8k.yaml)
+2026-04-21:21:38:04 INFO     [evaluator:314] gsm8k: Using gen_kwargs: {'until': ['Question:', '</s>', '<|im_end|>'], 'do_sample': False, 'temperature': 0.0}
+2026-04-21:21:38:04 WARNING  [evaluator:333] Overwriting default num_fewshot of gsm8k from 5 to 5
+2026-04-21:21:38:04 WARNING  [evaluator:490] Chat template formatting change affects loglikelihood and multiple-choice tasks. See docs/chat-template-readme.md for details.
+2026-04-21:21:38:04 INFO     [api.task:311] Building contexts for gsm8k on rank 0...
+  0%|          | 0/1319 [00:00<?, ?it/s]  4%|▎         | 49/1319 [00:00<00:02, 487.01it/s]  8%|▊         | 109/1319 [00:00<00:02, 548.56it/s] 13%|█▎        | 166/1319 [00:00<00:02, 554.67it/s] 17%|█▋        | 226/1319 [00:00<00:01, 571.68it/s] 22%|██▏       | 287/1319 [00:00<00:01, 581.99it/s] 26%|██▌       | 346/1319 [00:00<00:01, 579.56it/s] 31%|███       | 406/1319 [00:00<00:01, 585.89it/s] 35%|███▌      | 467/1319 [00:00<00:01, 590.47it/s] 40%|████      | 528/1319 [00:00<00:01, 593.75it/s] 45%|████▍     | 588/1319 [00:01<00:01, 595.01it/s] 49%|████▉     | 648/1319 [00:01<00:01, 593.59it/s] 54%|█████▎    | 708/1319 [00:01<00:01, 594.43it/s] 58%|█████▊    | 768/1319 [00:01<00:00, 593.71it/s] 63%|██████▎   | 828/1319 [00:01<00:00, 587.99it/s] 67%|██████▋   | 887/1319 [00:01<00:00, 586.36it/s] 72%|███████▏  | 946/1319 [00:01<00:00, 586.51it/s] 76%|███████▌  | 1005/1319 [00:01<00:00, 580.26it/s] 81%|████████  | 1064/1319 [00:01<00:00, 582.29it/s] 85%|████████▌ | 1123/1319 [00:01<00:00, 582.76it/s] 90%|████████▉ | 1182/1319 [00:02<00:00, 582.50it/s] 94%|█████████▍| 1242/1319 [00:02<00:00, 584.78it/s] 99%|█████████▊| 1302/1319 [00:02<00:00, 586.88it/s]100%|██████████| 1319/1319 [00:02<00:00, 583.45it/s]
+2026-04-21:21:38:06 INFO     [evaluator:584] Running generate_until requests
+Running generate_until requests:   0%|          | 0/1319 [00:00<?, ?it/s]Running generate_until requests:   0%|          | 1/1319 [00:02<45:22,  2.07s/it]Running generate_until requests:   3%|▎         | 33/1319 [00:04<02:13,  9.65it/s]Running generate_until requests:   5%|▍         | 65/1319 [00:05<01:37, 12.92it/s]Running generate_until requests:   7%|▋         | 97/1319 [00:07<01:22, 14.90it/s]Running generate_until requests:  10%|▉         | 129/1319 [00:08<01:07, 17.76it/s]Running generate_until requests:  12%|█▏        | 161/1319 [00:10<01:06, 17.54it/s]Running generate_until requests:  15%|█▍        | 193/1319 [00:12<01:04, 17.47it/s]Running generate_until requests:  17%|█▋        | 225/1319 [00:13<00:55, 19.57it/s]Running generate_until requests:  19%|█▉        | 257/1319 [00:15<00:56, 18.92it/s]Running generate_until requests:  22%|██▏       | 289/1319 [00:17<00:55, 18.54it/s]Running generate_until requests:  24%|██▍       | 321/1319 [00:19<00:55, 18.13it/s]Running generate_until requests:  27%|██▋       | 353/1319 [00:21<00:53, 17.92it/s]Running generate_until requests:  29%|██▉       | 385/1319 [00:22<00:52, 17.76it/s]Running generate_until requests:  32%|███▏      | 417/1319 [00:24<00:50, 17.81it/s]Running generate_until requests:  34%|███▍      | 449/1319 [00:26<00:45, 19.22it/s]Running generate_until requests:  36%|███▋      | 481/1319 [00:27<00:44, 18.73it/s]Running generate_until requests:  39%|███▉      | 513/1319 [00:29<00:43, 18.51it/s]Running generate_until requests:  41%|████▏     | 545/1319 [00:31<00:41, 18.66it/s]Running generate_until requests:  44%|████▎     | 577/1319 [00:32<00:38, 19.11it/s]Running generate_until requests:  46%|████▌     | 609/1319 [00:34<00:34, 20.30it/s]Running generate_until requests:  49%|████▊     | 641/1319 [00:36<00:34, 19.52it/s]Running generate_until requests:  51%|█████     | 673/1319 [00:37<00:33, 19.07it/s]Running generate_until requests:  53%|█████▎    | 705/1319 [00:39<00:29, 20.65it/s]Running generate_until requests:  56%|█████▌    | 737/1319 [00:40<00:28, 20.72it/s]Running generate_until requests:  58%|█████▊    | 769/1319 [00:41<00:24, 22.32it/s]Running generate_until requests:  61%|██████    | 801/1319 [00:43<00:22, 22.89it/s]Running generate_until requests:  63%|██████▎   | 833/1319 [00:44<00:20, 23.85it/s]Running generate_until requests:  66%|██████▌   | 865/1319 [00:46<00:20, 21.77it/s]Running generate_until requests:  68%|██████▊   | 897/1319 [00:47<00:20, 21.08it/s]Running generate_until requests:  70%|███████   | 929/1319 [00:48<00:16, 23.61it/s]Running generate_until requests:  73%|███████▎  | 961/1319 [00:49<00:14, 24.53it/s]Running generate_until requests:  75%|███████▌  | 993/1319 [00:51<00:13, 24.08it/s]Running generate_until requests:  78%|███████▊  | 1025/1319 [00:52<00:11, 25.16it/s]Running generate_until requests:  80%|████████  | 1057/1319 [00:54<00:11, 22.91it/s]Running generate_until requests:  83%|████████▎ | 1089/1319 [00:55<00:09, 24.32it/s]Running generate_until requests:  85%|████████▍ | 1121/1319 [00:56<00:08, 23.54it/s]Running generate_until requests:  87%|████████▋ | 1153/1319 [00:57<00:06, 25.28it/s]Running generate_until requests:  90%|████████▉ | 1185/1319 [00:58<00:05, 25.56it/s]Running generate_until requests:  92%|█████████▏| 1217/1319 [01:00<00:03, 25.80it/s]Running generate_until requests:  95%|█████████▍| 1249/1319 [01:01<00:03, 23.26it/s]Running generate_until requests:  97%|█████████▋| 1281/1319 [01:03<00:01, 24.65it/s]Running generate_until requests: 100%|█████████▉| 1313/1319 [01:04<00:00, 25.53it/s]Running generate_until requests: 100%|██████████| 1319/1319 [01:04<00:00, 20.56it/s]
+2026-04-21:21:39:16 INFO     [loggers.evaluation_tracker:247] Saving results aggregated
+2026-04-21:21:39:16 INFO     [loggers.evaluation_tracker:119] Saving per-task samples to eval_results/kmseong__llama3.1_8b_instruct_WaRP_original_space_3e-5/*.jsonl
+vllm ({'pretrained': 'kmseong/llama3.1_8b_instruct_WaRP_original_space_3e-5', 'seed': 42, 'enforce_eager': True, 'enable_prefix_caching': False, 'tensor_parallel_size': 1, 'data_parallel_size': 1, 'dtype': 'auto', 'gpu_memory_utilization': 0.3}), gen_kwargs: ({}), limit: None, num_fewshot: 5, batch_size: 32
+|Tasks|Version|     Filter     |n-shot|  Metric   |   |Value |   |Stderr|
+|-----|------:|----------------|-----:|-----------|---|-----:|---|-----:|
+|gsm8k|      3|flexible-extract|     5|exact_match|↑  |0.6672|±  |0.0130|
+|     |       |strict-match    |     5|exact_match|↑  |0.2024|±  |0.0111|
+
+✓ 완료: kmseong/llama3.1_8b_instruct_WaRP_original_space_3e-5 (task: gsm8k)
+
+==========================================
+모든 평가 완료!
+총 실행: 3개 (모델 1개 × task 3개)
+결과 경로: eval_results/
+로그 파일: logs/eval_20260421_213739.log
+==========================================
+평가 종료 시간: Tue Apr 21 09:39:18 PM KST 2026
+결과 요약: logs/eval_20260421_213739_results.log

@@ -1,0 +1,9 @@
+model,gsm8k_flexible
+kmseong/llama2_7b_SSFT_gsm8k_FT_lr3e-5,0.3851±0.0134
+kmseong/llama2_7b_only_sn_tuned_lr3e-5,0.0993±0.0082
+kmseong/llama2_7b_gsm8k_ft_freeze_sn_lr3e-5,0.4011±0.0135
+kmseong/llama2_7B_SSFT_WaRP_safety_basis_gsm8k_FT_lr3e-5,0.3882±0.0134
+kmseong/llama2_7b_chat_SSFT_gsm8k_FT_lr3e-5,0.4086±0.0135
+kmseong/llama2_7b_chat_only_sn_tuned_lr3e-5,0.2593±0.0121
+kmseong/llama2_7b_chat_gsm8k_ft_freeze_sn_lr3e-5,0.4132±0.0136
+kmseong/llama2_7B_chat_SSFT_WaRP_safety_basis_gsm8k_FT_lr3e-5,0.4056±0.0135

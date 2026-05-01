@@ -42,7 +42,8 @@ lm_cache/
 
 # Logging
 *.log
-logs/
+!logs/
+!logs/**
 
 # wandb experiment tracking
 wandb/

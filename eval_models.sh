@@ -9,8 +9,9 @@ export CUDA_VISIBLE_DEVICES=1
 
 # 평가할 모델 목록 (HuggingFace model ID)
 model_list=(
-    # "kmseong/llama2-7b-chat-safedelta-scale0.1"
-    # "kmseong/llama2-7b-chat-safe-lora-num_30_gsm8k_lr2e-4"
+    # "kmseong/llama2_7b-chat-Safety-FT-lr5e-5"
+    "kmseong/llama2_7b_chat-SSFT-MEDQA-FT-safety-mix-0.1-lr1e-5"
+    "kmseong/llama2_7b-chat-SSFT-WaRP_medqa_FT_lr1e-5"
 )
 
 export VLLM_USE_STANDALONE_COMPILE=0
@@ -31,7 +32,7 @@ echo "" | tee -a "$LOG_FILE"
 
 total_models=${#model_list[@]}
 current=0
-total_tasks=3
+total_tasks=2
 TASK_INCLUDE_PATH="/home/yonsei_jong/lm-evaluation-harness/lm_eval/tasks"
 
 for model in "${model_list[@]}"; do
@@ -49,6 +50,7 @@ for model in "${model_list[@]}"; do
     # el
     if [[ "$model" == *"Instruct"* || "$model" == *"instruct"* || "$model" == *"-chat"* || "$model" == *"_chat"* ]]; then
         Instruct_FLAGS+=(--apply_chat_template)
+        echo "  - Instruct/Chat 모델로 감지됨: Instruct_FLAGS에 --apply_chat_template 추가"
     fi
 
     echo "" | tee -a "$LOG_FILE"
@@ -56,22 +58,22 @@ for model in "${model_list[@]}"; do
     echo "[$current/$total_models] 모델 평가 중: $model" | tee -a "$LOG_FILE"
     echo "==========================================" | tee -a "$LOG_FILE"
 
-    echo "[1/$total_tasks] task 평가 중: gsm8k" | tee -a "$LOG_FILE"
-    if lm_eval --model vllm \
-        --model_args "$MODEL_ARGS",tensor_parallel_size=1,data_parallel_size=1,dtype=auto,gpu_memory_utilization=0.3 \
-        --tasks gsm8k \
-        --device cuda \
-        --seed "$EVAL_SEED" \
-        --batch_size 32 \
-        --output_path eval_results \
-        --log_samples \
-        --num_fewshot 5 \
-        "${Instruct_FLAGS[@]}" 2>&1 | tee -a "$LOG_FILE"; then
-        echo "✓ 완료: $model (task: gsm8k)" | tee -a "$LOG_FILE"
-    else
-        echo "✗ 실패: $model (task: gsm8k) - 종료 코드: $?" | tee -a "$LOG_FILE"
-        exit 1
-    fi
+    # echo "[1/$total_tasks] task 평가 중: gsm8k" | tee -a "$LOG_FILE"
+    # if lm_eval --model vllm \
+    #     --model_args "$MODEL_ARGS",tensor_parallel_size=1,data_parallel_size=1,dtype=auto,gpu_memory_utilization=0.3 \
+    #     --tasks gsm8k \
+    #     --device cuda \
+    #     --seed "$EVAL_SEED" \
+    #     --batch_size 32 \
+    #     --output_path eval_results \
+    #     --log_samples \
+    #     --num_fewshot 5 \
+    #     "${Instruct_FLAGS[@]}" 2>&1 | tee -a "$LOG_FILE"; then
+    #     echo "✓ 완료: $model (task: gsm8k)" | tee -a "$LOG_FILE"
+    # else
+    #     echo "✗ 실패: $model (task: gsm8k) - 종료 코드: $?" | tee -a "$LOG_FILE"
+    #     exit 1
+    # fi
 
 
 #     echo "[2/$total_tasks] task 평가 중: arc-c" | tee -a "$LOG_FILE"
@@ -91,22 +93,40 @@ for model in "${model_list[@]}"; do
 #         exit 1
 #     fi
 
-#    echo "[3/$total_tasks] task 평가 중: mmlu" | tee -a "$LOG_FILE"
-#     if lm_eval --model vllm \
-#         --model_args "$MODEL_ARGS",tensor_parallel_size=1,data_parallel_size=1,dtype=auto,gpu_memory_utilization=0.7 \
-#         --tasks mmlu \
-#         --device cuda \
-#         --seed "$EVAL_SEED" \
-#         --batch_size 32 \
-#         --num_fewshot 5 \
-#         --output_path eval_results \
-#         --log_samples \
-#         "${Instruct_FLAGS[@]}" 2>&1 | tee -a "$LOG_FILE"; then
-#         echo "✓ 완료: $model (task: mmlu)" | tee -a "$LOG_FILE"
-#     else
-#         echo "✗ 실패: $model (task: mmlu) - 종료 코드: $?" | tee -a "$LOG_FILE"
-#         exit 1
-#     fi
+    echo "[1/$total_tasks] task 평가 중: medqa_4options" | tee -a "$LOG_FILE"
+    if lm_eval --model vllm \
+        --model_args "$MODEL_ARGS",tensor_parallel_size=1,data_parallel_size=1,dtype=auto,gpu_memory_utilization=0.4 \
+        --tasks medqa_4options \
+        --include_path "$TASK_INCLUDE_PATH" \
+        --device cuda \
+        --seed "$EVAL_SEED" \
+        --batch_size 32 \
+        --num_fewshot 5 \
+        --output_path eval_results \
+        --log_samples \
+        "${Instruct_FLAGS[@]}" 2>&1 | tee -a "$LOG_FILE"; then
+        echo "✓ 완료: $model (task: medqa_4options)" | tee -a "$LOG_FILE"
+    else
+        echo "✗ 실패: $model (task: medqa_4options) - 종료 코드: $?" | tee -a "$LOG_FILE"
+        exit 1
+    fi
+
+    # echo "[2/$total_tasks] task 평가 중: mmlu" | tee -a "$LOG_FILE"
+    # if lm_eval --model vllm \
+    #     --model_args "$MODEL_ARGS",tensor_parallel_size=1,data_parallel_size=1,dtype=auto,gpu_memory_utilization=0.7 \
+    #     --tasks mmlu \
+    #     --device cuda \
+    #     --seed "$EVAL_SEED" \
+    #     --batch_size 32 \
+    #     --num_fewshot 5 \
+    #     --output_path eval_results \
+    #     --log_samples \
+    #     "${Instruct_FLAGS[@]}" 2>&1 | tee -a "$LOG_FILE"; then
+    #     echo "✓ 완료: $model (task: mmlu)" | tee -a "$LOG_FILE"
+    # else
+    #     echo "✗ 실패: $model (task: mmlu) - 종료 코드: $?" | tee -a "$LOG_FILE"
+    #     exit 1
+    # fi
 
     # echo "[1/$total_tasks] task 평가 중: hendrycks_math_safe" | tee -a "$LOG_FILE"
     # if lm_eval --model vllm \

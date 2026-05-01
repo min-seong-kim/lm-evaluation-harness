@@ -1,0 +1,2 @@
+model,gsm8k_flexible,arc_c_acc_norm,mmlu_acc
+kmseong/llama3.1_8b_base-SSFT-start-WaRP-original-space-gsm8k-FT-lr3e-5,0.6133±0.0134,0.5051±0.0146,0.6012±0.0039

@@ -1,0 +1,21 @@
+============================================================
+평가 결과 요약
+============================================================
+
+[1/2] 모델 평가 중: kmseong/llama3.1_8b_instruct_MATH_FT_lr3e-5_freeze_sn
+----------------------------------------
+|      Groups       |Version|Filter|n-shot|  Metric   |   |Value |   |Stderr|
+|-------------------|------:|------|------|-----------|---|-----:|---|-----:|
+|hendrycks_math_safe|      1|none  |      |exact_match|↑  |0.2178|±  |0.0056|
+
+✓ 완료: kmseong/llama3.1_8b_instruct_MATH_FT_lr3e-5_freeze_sn (task: hendrycks_math_safe)
+
+[2/2] 모델 평가 중: kmseong/llama3.1_8b_instruct_MATH_FT_lr3e-5_freeze_rsn
+----------------------------------------
+|      Groups       |Version|Filter|n-shot|  Metric   |   |Value |   |Stderr|
+|-------------------|------:|------|------|-----------|---|-----:|---|-----:|
+|hendrycks_math_safe|      1|none  |      |exact_match|↑  |0.2066|±  |0.0055|
+
+✓ 완료: kmseong/llama3.1_8b_instruct_MATH_FT_lr3e-5_freeze_rsn (task: hendrycks_math_safe)
+
+============================================================

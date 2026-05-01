@@ -1,0 +1,166 @@
+평가 시작 시간: Wed Apr 29 05:26:31 PM KST 2026
+고정 시드: 42
+
+
+==========================================
+[1/1] 모델 평가 중: kmseong/llama2_7b-chat-WaRP_only_prompt_lr5e-5
+==========================================
+[1/3] task 평가 중: gsm8k
+2026-04-29:17:26:32 INFO     [config.evaluate_config:301] Using default fewshot_as_multiturn=True.
+2026-04-29:17:26:35 INFO     [_cli.run:376] Selected Tasks: ['gsm8k']
+2026-04-29:17:26:35 INFO     [evaluator:211] Setting random seed to 42 | Setting numpy seed to 42 | Setting torch manual seed to 42 | Setting fewshot manual seed to 42
+2026-04-29:17:26:35 INFO     [evaluator:236] Initializing vllm model, with arguments: {'pretrained': 'kmseong/llama2_7b-chat-WaRP_only_prompt_lr5e-5', 'seed': 42, 'enforce_eager': True, 'enable_prefix_caching': False, 'tensor_parallel_size': 1, 'data_parallel_size': 1, 'dtype': 'auto', 'gpu_memory_utilization': 0.3}
+INFO 04-29 17:26:38 [utils.py:238] non-default args: {'seed': 42, 'enable_prefix_caching': False, 'gpu_memory_utilization': 0.3, 'disable_log_stats': True, 'enforce_eager': True, 'model': 'kmseong/llama2_7b-chat-WaRP_only_prompt_lr5e-5'}
+INFO 04-29 17:26:39 [model.py:531] Resolved architecture: LlamaForCausalLM
+INFO 04-29 17:26:39 [model.py:1889] Downcasting torch.float32 to torch.bfloat16.
+INFO 04-29 17:26:39 [model.py:1554] Using max model len 131072
+INFO 04-29 17:26:39 [scheduler.py:231] Chunked prefill is enabled with max_num_batched_tokens=16384.
+INFO 04-29 17:26:39 [vllm.py:747] Asynchronous scheduling is enabled.
+WARNING 04-29 17:26:39 [vllm.py:781] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none
+WARNING 04-29 17:26:39 [vllm.py:792] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.
+INFO 04-29 17:26:40 [vllm.py:957] Cudagraph is disabled under eager mode
+(EngineCore_DP0 pid=3325313) INFO 04-29 17:26:41 [core.py:101] Initializing a V1 LLM engine (v0.17.1) with config: model='kmseong/llama2_7b-chat-WaRP_only_prompt_lr5e-5', speculative_config=None, tokenizer='kmseong/llama2_7b-chat-WaRP_only_prompt_lr5e-5', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=131072, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=True, enable_return_routed_experts=False, kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_fallback=False, disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, kv_cache_metrics=False, kv_cache_metrics_sample=0.01, cudagraph_metrics=False, enable_layerwise_nvtx_tracing=False, enable_mfu_metrics=False, enable_mm_processor_stats=False, enable_logging_iteration_details=False), seed=42, served_model_name=kmseong/llama2_7b-chat-WaRP_only_prompt_lr5e-5, enable_prefix_caching=False, enable_chunked_prefill=True, pooler_config=None, compilation_config={'level': None, 'mode': <CompilationMode.NONE: 0>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['all'], 'splitting_ops': [], 'compile_mm_encoder': False, 'compile_sizes': [], 'compile_ranges_split_points': [16384], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.NONE: 0>, 'cudagraph_num_of_warmups': 0, 'cudagraph_capture_sizes': [], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {'fuse_norm_quant': True, 'fuse_act_quant': True, 'fuse_attn_quant': False, 'enable_sp': False, 'fuse_gemm_comms': False, 'fuse_allreduce_rms': False}, 'max_cudagraph_capture_size': 0, 'dynamic_shapes_config': {'type': <DynamicShapesType.BACKED: 'backed'>, 'evaluate_guards': False, 'assume_32_bit_indexing': False}, 'local_cache_dir': None, 'fast_moe_cold_start': True, 'static_all_moe_layers': []}
+(EngineCore_DP0 pid=3325313) INFO 04-29 17:26:43 [parallel_state.py:1393] world_size=1 rank=0 local_rank=0 distributed_init_method=tcp://172.18.0.3:33009 backend=nccl
+(EngineCore_DP0 pid=3325313) INFO 04-29 17:26:43 [parallel_state.py:1715] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, EP rank N/A, EPLB rank N/A
+(EngineCore_DP0 pid=3325313) INFO 04-29 17:26:43 [base.py:106] Offloader set to NoopOffloader
+(EngineCore_DP0 pid=3325313) INFO 04-29 17:26:43 [gpu_model_runner.py:4281] Starting to load model kmseong/llama2_7b-chat-WaRP_only_prompt_lr5e-5...
+(EngineCore_DP0 pid=3325313) INFO 04-29 17:26:44 [cuda.py:405] Using FLASHINFER attention backend out of potential backends: ['FLASHINFER', 'FLASH_ATTN', 'TRITON_ATTN', 'FLEX_ATTENTION'].
+(EngineCore_DP0 pid=3325313) INFO 04-29 17:26:44 [selector.py:119] Using HND KV cache layout for FLASHINFER backend.
+(EngineCore_DP0 pid=3325313) Loading safetensors checkpoint shards:   0% Completed | 0/3 [00:00<?, ?it/s]
+(EngineCore_DP0 pid=3325313) ERROR 04-29 17:26:46 [core.py:1100] EngineCore failed to start.
+(EngineCore_DP0 pid=3325313) ERROR 04-29 17:26:46 [core.py:1100] Traceback (most recent call last):
+(EngineCore_DP0 pid=3325313) ERROR 04-29 17:26:46 [core.py:1100]   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/v1/engine/core.py", line 1090, in run_engine_core
+(EngineCore_DP0 pid=3325313) ERROR 04-29 17:26:46 [core.py:1100]     engine_core = EngineCoreProc(*args, engine_index=dp_rank, **kwargs)
+(EngineCore_DP0 pid=3325313) ERROR 04-29 17:26:46 [core.py:1100]   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/tracing/otel.py", line 178, in sync_wrapper
+(EngineCore_DP0 pid=3325313) ERROR 04-29 17:26:46 [core.py:1100]     return func(*args, **kwargs)
+(EngineCore_DP0 pid=3325313) ERROR 04-29 17:26:46 [core.py:1100]   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/v1/engine/core.py", line 834, in __init__
+(EngineCore_DP0 pid=3325313) ERROR 04-29 17:26:46 [core.py:1100]     super().__init__(
+(EngineCore_DP0 pid=3325313) ERROR 04-29 17:26:46 [core.py:1100]   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/v1/engine/core.py", line 110, in __init__
+(EngineCore_DP0 pid=3325313) ERROR 04-29 17:26:46 [core.py:1100]     self.model_executor = executor_class(vllm_config)
+(EngineCore_DP0 pid=3325313) ERROR 04-29 17:26:46 [core.py:1100]   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/tracing/otel.py", line 178, in sync_wrapper
+(EngineCore_DP0 pid=3325313) ERROR 04-29 17:26:46 [core.py:1100]     return func(*args, **kwargs)
+(EngineCore_DP0 pid=3325313) ERROR 04-29 17:26:46 [core.py:1100]   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/v1/executor/abstract.py", line 103, in __init__
+(EngineCore_DP0 pid=3325313) ERROR 04-29 17:26:46 [core.py:1100]     self._init_executor()
+(EngineCore_DP0 pid=3325313) ERROR 04-29 17:26:46 [core.py:1100]   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/v1/executor/uniproc_executor.py", line 49, in _init_executor
+(EngineCore_DP0 pid=3325313) ERROR 04-29 17:26:46 [core.py:1100]     self.driver_worker.load_model()
+(EngineCore_DP0 pid=3325313) ERROR 04-29 17:26:46 [core.py:1100]   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/v1/worker/gpu_worker.py", line 337, in load_model
+(EngineCore_DP0 pid=3325313) ERROR 04-29 17:26:46 [core.py:1100]     self.model_runner.load_model(load_dummy_weights=dummy_weights)
+(EngineCore_DP0 pid=3325313) ERROR 04-29 17:26:46 [core.py:1100]   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/tracing/otel.py", line 178, in sync_wrapper
+(EngineCore_DP0 pid=3325313) ERROR 04-29 17:26:46 [core.py:1100]     return func(*args, **kwargs)
+(EngineCore_DP0 pid=3325313) ERROR 04-29 17:26:46 [core.py:1100]   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/v1/worker/gpu_model_runner.py", line 4297, in load_model
+(EngineCore_DP0 pid=3325313) ERROR 04-29 17:26:46 [core.py:1100]     self.model = model_loader.load_model(
+(EngineCore_DP0 pid=3325313) ERROR 04-29 17:26:46 [core.py:1100]   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/tracing/otel.py", line 178, in sync_wrapper
+(EngineCore_DP0 pid=3325313) ERROR 04-29 17:26:46 [core.py:1100]     return func(*args, **kwargs)
+(EngineCore_DP0 pid=3325313) ERROR 04-29 17:26:46 [core.py:1100]   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/model_executor/model_loader/base_loader.py", line 62, in load_model
+(EngineCore_DP0 pid=3325313) ERROR 04-29 17:26:46 [core.py:1100]     self.load_weights(model, model_config)
+(EngineCore_DP0 pid=3325313) ERROR 04-29 17:26:46 [core.py:1100]   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/tracing/otel.py", line 178, in sync_wrapper
+(EngineCore_DP0 pid=3325313) ERROR 04-29 17:26:46 [core.py:1100]     return func(*args, **kwargs)
+(EngineCore_DP0 pid=3325313) ERROR 04-29 17:26:46 [core.py:1100]   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/model_executor/model_loader/default_loader.py", line 290, in load_weights
+(EngineCore_DP0 pid=3325313) ERROR 04-29 17:26:46 [core.py:1100]     loaded_weights = model.load_weights(self.get_all_weights(model_config, model))
+(EngineCore_DP0 pid=3325313) ERROR 04-29 17:26:46 [core.py:1100]   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/model_executor/models/llama.py", line 606, in load_weights
+(EngineCore_DP0 pid=3325313) ERROR 04-29 17:26:46 [core.py:1100]     return loader.load_weights(weights)
+(EngineCore_DP0 pid=3325313) ERROR 04-29 17:26:46 [core.py:1100]   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/model_executor/model_loader/reload/torchao_decorator.py", line 50, in patched_model_load_weights
+(EngineCore_DP0 pid=3325313) ERROR 04-29 17:26:46 [core.py:1100]     return original_load_weights(self, weights, *args, **kwargs)
+(EngineCore_DP0 pid=3325313) ERROR 04-29 17:26:46 [core.py:1100]   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/model_executor/models/utils.py", line 340, in load_weights
+(EngineCore_DP0 pid=3325313) ERROR 04-29 17:26:46 [core.py:1100]     autoloaded_weights = set(self._load_module("", self.module, weights))
+(EngineCore_DP0 pid=3325313) ERROR 04-29 17:26:46 [core.py:1100]   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/model_executor/models/utils.py", line 287, in _load_module
+(EngineCore_DP0 pid=3325313) ERROR 04-29 17:26:46 [core.py:1100]     yield from self._load_module(
+(EngineCore_DP0 pid=3325313) ERROR 04-29 17:26:46 [core.py:1100]   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/model_executor/models/utils.py", line 260, in _load_module
+(EngineCore_DP0 pid=3325313) ERROR 04-29 17:26:46 [core.py:1100]     loaded_params = module_load_weights(weights)
+(EngineCore_DP0 pid=3325313) ERROR 04-29 17:26:46 [core.py:1100]   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/model_executor/models/llama.py", line 501, in load_weights
+(EngineCore_DP0 pid=3325313) ERROR 04-29 17:26:46 [core.py:1100]     weight_loader(param, loaded_weight)
+(EngineCore_DP0 pid=3325313) ERROR 04-29 17:26:46 [core.py:1100]   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/model_executor/layers/vocab_parallel_embedding.py", line 457, in weight_loader
+(EngineCore_DP0 pid=3325313) ERROR 04-29 17:26:46 [core.py:1100]     assert loaded_weight.shape[output_dim] == self.org_vocab_size
+(EngineCore_DP0 pid=3325313) ERROR 04-29 17:26:46 [core.py:1100] AssertionError
+(EngineCore_DP0 pid=3325313) Process EngineCore_DP0:
+(EngineCore_DP0 pid=3325313) Traceback (most recent call last):
+(EngineCore_DP0 pid=3325313)   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+(EngineCore_DP0 pid=3325313)     self.run()
+(EngineCore_DP0 pid=3325313)   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/multiprocessing/process.py", line 108, in run
+(EngineCore_DP0 pid=3325313)     self._target(*self._args, **self._kwargs)
+(EngineCore_DP0 pid=3325313)   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/v1/engine/core.py", line 1104, in run_engine_core
+(EngineCore_DP0 pid=3325313)     raise e
+(EngineCore_DP0 pid=3325313)   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/v1/engine/core.py", line 1090, in run_engine_core
+(EngineCore_DP0 pid=3325313)     engine_core = EngineCoreProc(*args, engine_index=dp_rank, **kwargs)
+(EngineCore_DP0 pid=3325313)   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/tracing/otel.py", line 178, in sync_wrapper
+(EngineCore_DP0 pid=3325313)     return func(*args, **kwargs)
+(EngineCore_DP0 pid=3325313)   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/v1/engine/core.py", line 834, in __init__
+(EngineCore_DP0 pid=3325313)     super().__init__(
+(EngineCore_DP0 pid=3325313)   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/v1/engine/core.py", line 110, in __init__
+(EngineCore_DP0 pid=3325313)     self.model_executor = executor_class(vllm_config)
+(EngineCore_DP0 pid=3325313)   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/tracing/otel.py", line 178, in sync_wrapper
+(EngineCore_DP0 pid=3325313)     return func(*args, **kwargs)
+(EngineCore_DP0 pid=3325313)   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/v1/executor/abstract.py", line 103, in __init__
+(EngineCore_DP0 pid=3325313)     self._init_executor()
+(EngineCore_DP0 pid=3325313)   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/v1/executor/uniproc_executor.py", line 49, in _init_executor
+(EngineCore_DP0 pid=3325313)     self.driver_worker.load_model()
+(EngineCore_DP0 pid=3325313)   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/v1/worker/gpu_worker.py", line 337, in load_model
+(EngineCore_DP0 pid=3325313)     self.model_runner.load_model(load_dummy_weights=dummy_weights)
+(EngineCore_DP0 pid=3325313)   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/tracing/otel.py", line 178, in sync_wrapper
+(EngineCore_DP0 pid=3325313)     return func(*args, **kwargs)
+(EngineCore_DP0 pid=3325313)   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/v1/worker/gpu_model_runner.py", line 4297, in load_model
+(EngineCore_DP0 pid=3325313)     self.model = model_loader.load_model(
+(EngineCore_DP0 pid=3325313)   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/tracing/otel.py", line 178, in sync_wrapper
+(EngineCore_DP0 pid=3325313)     return func(*args, **kwargs)
+(EngineCore_DP0 pid=3325313)   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/model_executor/model_loader/base_loader.py", line 62, in load_model
+(EngineCore_DP0 pid=3325313)     self.load_weights(model, model_config)
+(EngineCore_DP0 pid=3325313)   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/tracing/otel.py", line 178, in sync_wrapper
+(EngineCore_DP0 pid=3325313)     return func(*args, **kwargs)
+(EngineCore_DP0 pid=3325313)   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/model_executor/model_loader/default_loader.py", line 290, in load_weights
+(EngineCore_DP0 pid=3325313)     loaded_weights = model.load_weights(self.get_all_weights(model_config, model))
+(EngineCore_DP0 pid=3325313)   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/model_executor/models/llama.py", line 606, in load_weights
+(EngineCore_DP0 pid=3325313)     return loader.load_weights(weights)
+(EngineCore_DP0 pid=3325313)   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/model_executor/model_loader/reload/torchao_decorator.py", line 50, in patched_model_load_weights
+(EngineCore_DP0 pid=3325313)     return original_load_weights(self, weights, *args, **kwargs)
+(EngineCore_DP0 pid=3325313)   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/model_executor/models/utils.py", line 340, in load_weights
+(EngineCore_DP0 pid=3325313)     autoloaded_weights = set(self._load_module("", self.module, weights))
+(EngineCore_DP0 pid=3325313)   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/model_executor/models/utils.py", line 287, in _load_module
+(EngineCore_DP0 pid=3325313)     yield from self._load_module(
+(EngineCore_DP0 pid=3325313)   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/model_executor/models/utils.py", line 260, in _load_module
+(EngineCore_DP0 pid=3325313)     loaded_params = module_load_weights(weights)
+(EngineCore_DP0 pid=3325313)   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/model_executor/models/llama.py", line 501, in load_weights
+(EngineCore_DP0 pid=3325313)     weight_loader(param, loaded_weight)
+(EngineCore_DP0 pid=3325313)   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/model_executor/layers/vocab_parallel_embedding.py", line 457, in weight_loader
+(EngineCore_DP0 pid=3325313)     assert loaded_weight.shape[output_dim] == self.org_vocab_size
+(EngineCore_DP0 pid=3325313) AssertionError
+(EngineCore_DP0 pid=3325313) Loading safetensors checkpoint shards:   0% Completed | 0/3 [00:00<?, ?it/s]
+(EngineCore_DP0 pid=3325313) 
+Traceback (most recent call last):
+  File "/home/yonsei_jong/miniconda3/envs/hb/bin/lm_eval", line 7, in <module>
+    sys.exit(cli_evaluate())
+  File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/lm_eval/__main__.py", line 10, in cli_evaluate
+    parser.execute(args)
+  File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/lm_eval/_cli/harness.py", line 60, in execute
+    args.func(args)
+  File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/lm_eval/_cli/run.py", line 379, in _execute
+    results = simple_evaluate(
+  File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/lm_eval/utils.py", line 498, in _wrapper
+    return fn(*args, **kwargs)
+  File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/lm_eval/evaluator.py", line 239, in simple_evaluate
+    lm = lm_eval.api.registry.get_model(model).create_from_arg_obj(
+  File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/lm_eval/api/model.py", line 180, in create_from_arg_obj
+    return cls(**arg_dict, **additional_config)
+  File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/lm_eval/models/vllm_causallms.py", line 202, in __init__
+    self.model = LLM(**self.model_args)  # type: ignore[invalid-argument-type]
+  File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/entrypoints/llm.py", line 379, in __init__
+    self.llm_engine = LLMEngine.from_engine_args(
+  File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/v1/engine/llm_engine.py", line 177, in from_engine_args
+    return cls(
+  File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/v1/engine/llm_engine.py", line 111, in __init__
+    self.engine_core = EngineCoreClient.make_client(
+  File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/v1/engine/core_client.py", line 98, in make_client
+    return SyncMPClient(vllm_config, executor_class, log_stats)
+  File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/tracing/otel.py", line 178, in sync_wrapper
+    return func(*args, **kwargs)
+  File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/v1/engine/core_client.py", line 734, in __init__
+    super().__init__(
+  File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/v1/engine/core_client.py", line 569, in __init__
+    with launch_core_engines(
+  File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/contextlib.py", line 142, in __exit__
+    next(self.gen)
+  File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/v1/engine/utils.py", line 951, in launch_core_engines
+    wait_for_engine_startup(
+  File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/v1/engine/utils.py", line 1010, in wait_for_engine_startup
+    raise RuntimeError(
+RuntimeError: Engine core initialization failed. See root cause above. Failed core proc(s): {}
+✗ 실패: kmseong/llama2_7b-chat-WaRP_only_prompt_lr5e-5 (task: gsm8k) - 종료 코드: 1
