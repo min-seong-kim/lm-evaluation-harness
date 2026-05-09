@@ -1,0 +1,21 @@
+============================================================
+평가 결과 요약
+============================================================
+
+[1/2] 모델 평가 중: kmseong/llama3.1-8b-instruct-lr5e-5-math-resta-gamma0.3
+----------------------------------------
+|      Groups       |Version|Filter|n-shot|  Metric   |   |Value|   |Stderr|
+|-------------------|------:|------|------|-----------|---|----:|---|-----:|
+|hendrycks_math_safe|      1|none  |      |exact_match|↑  |0.186|±  |0.0053|
+
+✓ 완료: kmseong/llama3.1-8b-instruct-lr5e-5-math-resta-gamma0.3 (task: hendrycks_math_safe)
+
+[2/2] 모델 평가 중: kmseong/llama3.1_8b_instruct-WaRP-MATH-lr3e-5
+----------------------------------------
+|      Groups       |Version|Filter|n-shot|  Metric   |   |Value |   |Stderr|
+|-------------------|------:|------|------|-----------|---|-----:|---|-----:|
+|hendrycks_math_safe|      1|none  |      |exact_match|↑  |0.0718|±  |0.0036|
+
+✓ 완료: kmseong/llama3.1_8b_instruct-WaRP-MATH-lr3e-5 (task: hendrycks_math_safe)
+
+============================================================

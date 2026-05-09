@@ -1,0 +1,21 @@
+============================================================
+평가 결과 요약
+============================================================
+
+[1/2] 모델 평가 중: kmseong/llama2_7b-chat-Safety-FT-lr5e-5
+----------------------------------------
+|      Tasks       |Version|     Filter      |n-shot|  Metric   |   |Value |   |Stderr|
+|------------------|------:|-----------------|-----:|-----------|---|-----:|---|-----:|
+|arc_challenge_chat|      1|remove_whitespace|     0|exact_match|↑  |0.2065|±  |0.0118|
+
+✓ 완료: kmseong/llama2_7b-chat-Safety-FT-lr5e-5 (task: arc-c)
+
+[2/2] 모델 평가 중: kmseong/llama2_7b-chat-arc_ssft_lr5e-5_template
+----------------------------------------
+|      Tasks       |Version|     Filter      |n-shot|  Metric   |   |Value |   |Stderr|
+|------------------|------:|-----------------|-----:|-----------|---|-----:|---|-----:|
+|arc_challenge_chat|      1|remove_whitespace|     0|exact_match|↑  |0.5657|±  |0.0145|
+
+✓ 완료: kmseong/llama2_7b-chat-arc_ssft_lr5e-5_template (task: arc-c)
+
+============================================================

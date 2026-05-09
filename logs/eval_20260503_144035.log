@@ -1,0 +1,113 @@
+평가 시작 시간: Sun May  3 02:40:35 PM KST 2026
+고정 시드: 42
+
+
+==========================================
+[1/2] 모델 평가 중: kmseong/llama2_7b-chat-Safety-FT-lr5e-5
+==========================================
+[2/2] task 평가 중: arc-c
+2026-05-03:14:40:35 INFO     [config.evaluate_config:301] Using default fewshot_as_multiturn=True.
+2026-05-03:14:40:38 INFO     [_cli.run:376] Selected Tasks: ['arc_challenge_chat']
+2026-05-03:14:40:38 INFO     [evaluator:211] Setting random seed to 42 | Setting numpy seed to 42 | Setting torch manual seed to 42 | Setting fewshot manual seed to 42
+2026-05-03:14:40:38 INFO     [evaluator:236] Initializing vllm model, with arguments: {'pretrained': 'kmseong/llama2_7b-chat-Safety-FT-lr5e-5', 'seed': 42, 'enforce_eager': True, 'enable_prefix_caching': False, 'tensor_parallel_size': 1, 'data_parallel_size': 1, 'dtype': 'auto', 'gpu_memory_utilization': 0.7}
+W0503 14:40:41.459000 181939 site-packages/torch/utils/cpp_extension.py:140] No CUDA runtime is found, using CUDA_HOME='/usr/local/cuda'
+INFO 05-03 14:40:41 [utils.py:233] non-default args: {'seed': 42, 'enable_prefix_caching': False, 'gpu_memory_utilization': 0.7, 'disable_log_stats': True, 'enforce_eager': True, 'model': 'kmseong/llama2_7b-chat-Safety-FT-lr5e-5'}
+ERROR 05-03 14:40:48 [registry.py:912] Error in inspecting model architecture 'LlamaForCausalLM'
+ERROR 05-03 14:40:48 [registry.py:912] Traceback (most recent call last):
+ERROR 05-03 14:40:48 [registry.py:912]   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/model_executor/models/registry.py", line 1336, in _run_in_subprocess
+ERROR 05-03 14:40:48 [registry.py:912]     returned.check_returncode()
+ERROR 05-03 14:40:48 [registry.py:912]   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/subprocess.py", line 457, in check_returncode
+ERROR 05-03 14:40:48 [registry.py:912]     raise CalledProcessError(self.returncode, self.args, self.stdout,
+ERROR 05-03 14:40:48 [registry.py:912] subprocess.CalledProcessError: Command '['/home/yonsei_jong/miniconda3/envs/hb/bin/python3.10', '-m', 'vllm.model_executor.models.registry']' returned non-zero exit status 1.
+ERROR 05-03 14:40:48 [registry.py:912] 
+ERROR 05-03 14:40:48 [registry.py:912] The above exception was the direct cause of the following exception:
+ERROR 05-03 14:40:48 [registry.py:912] 
+ERROR 05-03 14:40:48 [registry.py:912] Traceback (most recent call last):
+ERROR 05-03 14:40:48 [registry.py:912]   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/model_executor/models/registry.py", line 910, in _try_inspect_model_cls
+ERROR 05-03 14:40:48 [registry.py:912]     return model.inspect_model_cls()
+ERROR 05-03 14:40:48 [registry.py:912]   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/logging_utils/log_time.py", line 21, in _wrapper
+ERROR 05-03 14:40:48 [registry.py:912]     result = func(*args, **kwargs)
+ERROR 05-03 14:40:48 [registry.py:912]   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/model_executor/models/registry.py", line 871, in inspect_model_cls
+ERROR 05-03 14:40:48 [registry.py:912]     mi = _run_in_subprocess(
+ERROR 05-03 14:40:48 [registry.py:912]   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/model_executor/models/registry.py", line 1339, in _run_in_subprocess
+ERROR 05-03 14:40:48 [registry.py:912]     raise RuntimeError(
+ERROR 05-03 14:40:48 [registry.py:912] RuntimeError: Error raised in subprocess:
+ERROR 05-03 14:40:48 [registry.py:912] /home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/runpy.py:126: RuntimeWarning: 'vllm.model_executor.models.registry' found in sys.modules after import of package 'vllm.model_executor.models', but prior to execution of 'vllm.model_executor.models.registry'; this may result in unpredictable behaviour
+ERROR 05-03 14:40:48 [registry.py:912]   warn(RuntimeWarning(msg))
+ERROR 05-03 14:40:48 [registry.py:912] W0503 14:40:47.033000 182389 site-packages/torch/utils/cpp_extension.py:140] No CUDA runtime is found, using CUDA_HOME='/usr/local/cuda'
+ERROR 05-03 14:40:48 [registry.py:912] Traceback (most recent call last):
+ERROR 05-03 14:40:48 [registry.py:912]   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+ERROR 05-03 14:40:48 [registry.py:912]     return _run_code(code, main_globals, None,
+ERROR 05-03 14:40:48 [registry.py:912]   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/runpy.py", line 86, in _run_code
+ERROR 05-03 14:40:48 [registry.py:912]     exec(code, run_globals)
+ERROR 05-03 14:40:48 [registry.py:912]   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/model_executor/models/registry.py", line 1362, in <module>
+ERROR 05-03 14:40:48 [registry.py:912]     _run()
+ERROR 05-03 14:40:48 [registry.py:912]   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/model_executor/models/registry.py", line 1355, in _run
+ERROR 05-03 14:40:48 [registry.py:912]     result = fn()
+ERROR 05-03 14:40:48 [registry.py:912]   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/model_executor/models/registry.py", line 872, in <lambda>
+ERROR 05-03 14:40:48 [registry.py:912]     lambda: _ModelInfo.from_model_cls(self.load_model_cls())
+ERROR 05-03 14:40:48 [registry.py:912]   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/model_executor/models/registry.py", line 885, in load_model_cls
+ERROR 05-03 14:40:48 [registry.py:912]     mod = importlib.import_module(self.module_name)
+ERROR 05-03 14:40:48 [registry.py:912]   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/importlib/__init__.py", line 126, in import_module
+ERROR 05-03 14:40:48 [registry.py:912]     return _bootstrap._gcd_import(name[level:], package, level)
+ERROR 05-03 14:40:48 [registry.py:912]   File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+ERROR 05-03 14:40:48 [registry.py:912]   File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+ERROR 05-03 14:40:48 [registry.py:912]   File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+ERROR 05-03 14:40:48 [registry.py:912]   File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+ERROR 05-03 14:40:48 [registry.py:912]   File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+ERROR 05-03 14:40:48 [registry.py:912]   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+ERROR 05-03 14:40:48 [registry.py:912]   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/model_executor/models/llama.py", line 42, in <module>
+ERROR 05-03 14:40:48 [registry.py:912]     from vllm.model_executor.layers.layernorm import RMSNorm
+ERROR 05-03 14:40:48 [registry.py:912]   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/model_executor/layers/layernorm.py", line 10, in <module>
+ERROR 05-03 14:40:48 [registry.py:912]     import vllm.kernels  # noqa: F401
+ERROR 05-03 14:40:48 [registry.py:912]   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/kernels/__init__.py", line 5, in <module>
+ERROR 05-03 14:40:48 [registry.py:912]     from . import aiter_ops, oink_ops, vllm_c, xpu_ops
+ERROR 05-03 14:40:48 [registry.py:912]   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/kernels/oink_ops.py", line 8, in <module>
+ERROR 05-03 14:40:48 [registry.py:912]     OINK_AVAILABLE = current_platform.has_device_capability(100) and hasattr(
+ERROR 05-03 14:40:48 [registry.py:912]   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/platforms/cuda.py", line 151, in wrapper
+ERROR 05-03 14:40:48 [registry.py:912]     return fn(*args, **kwargs)
+ERROR 05-03 14:40:48 [registry.py:912]   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/platforms/cuda.py", line 609, in has_device_capability
+ERROR 05-03 14:40:48 [registry.py:912]     return super().has_device_capability(capability, device_id)
+ERROR 05-03 14:40:48 [registry.py:912]   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/platforms/interface.py", line 314, in has_device_capability
+ERROR 05-03 14:40:48 [registry.py:912]     current_capability = cls.get_device_capability(device_id=device_id)
+ERROR 05-03 14:40:48 [registry.py:912]   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/platforms/cuda.py", line 151, in wrapper
+ERROR 05-03 14:40:48 [registry.py:912]     return fn(*args, **kwargs)
+ERROR 05-03 14:40:48 [registry.py:912]   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/platforms/cuda.py", line 595, in get_device_capability
+ERROR 05-03 14:40:48 [registry.py:912]     handle = pynvml.nvmlDeviceGetHandleByIndex(physical_device_id)
+ERROR 05-03 14:40:48 [registry.py:912]   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/third_party/pynvml.py", line 2609, in nvmlDeviceGetHandleByIndex
+ERROR 05-03 14:40:48 [registry.py:912]     _nvmlCheckReturn(ret)
+ERROR 05-03 14:40:48 [registry.py:912]   File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/third_party/pynvml.py", line 1047, in _nvmlCheckReturn
+ERROR 05-03 14:40:48 [registry.py:912]     raise NVMLError(ret)
+ERROR 05-03 14:40:48 [registry.py:912] vllm.third_party.pynvml.NVMLError_InvalidArgument: Invalid Argument
+ERROR 05-03 14:40:48 [registry.py:912] 
+Traceback (most recent call last):
+  File "/home/yonsei_jong/miniconda3/envs/hb/bin/lm_eval", line 7, in <module>
+    sys.exit(cli_evaluate())
+  File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/lm_eval/__main__.py", line 10, in cli_evaluate
+    parser.execute(args)
+  File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/lm_eval/_cli/harness.py", line 60, in execute
+    args.func(args)
+  File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/lm_eval/_cli/run.py", line 379, in _execute
+    results = simple_evaluate(
+  File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/lm_eval/utils.py", line 498, in _wrapper
+    return fn(*args, **kwargs)
+  File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/lm_eval/evaluator.py", line 239, in simple_evaluate
+    lm = lm_eval.api.registry.get_model(model).create_from_arg_obj(
+  File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/lm_eval/api/model.py", line 180, in create_from_arg_obj
+    return cls(**arg_dict, **additional_config)
+  File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/lm_eval/models/vllm_causallms.py", line 202, in __init__
+    self.model = LLM(**self.model_args)  # type: ignore[invalid-argument-type]
+  File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/entrypoints/llm.py", line 381, in __init__
+    self.llm_engine = LLMEngine.from_engine_args(
+  File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/v1/engine/llm_engine.py", line 162, in from_engine_args
+    vllm_config = engine_args.create_engine_config(usage_context)
+  File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/engine/arg_utils.py", line 1627, in create_engine_config
+    model_config = self.create_model_config()
+  File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/vllm/engine/arg_utils.py", line 1475, in create_model_config
+    return ModelConfig(
+  File "/home/yonsei_jong/miniconda3/envs/hb/lib/python3.10/site-packages/pydantic/_internal/_dataclasses.py", line 121, in __init__
+    s.__pydantic_validator__.validate_python(ArgsKwargs(args, kwargs), self_instance=s)
+pydantic_core._pydantic_core.ValidationError: 1 validation error for ModelConfig
+  Value error, Model architectures ['LlamaForCausalLM'] failed to be inspected. Please check the logs for more details. [type=value_error, input_value=ArgsKwargs((), {'model': ...nderer_num_workers': 1}), input_type=ArgsKwargs]
+    For further information visit https://errors.pydantic.dev/2.12/v/value_error
+✗ 실패: kmseong/llama2_7b-chat-Safety-FT-lr5e-5 (task: arc-c) - 종료 코드: 1

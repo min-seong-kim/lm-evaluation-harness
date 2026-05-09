@@ -1,0 +1,45 @@
+============================================================
+평가 결과 요약
+============================================================
+
+[1/5] 모델 평가 중: kmseong/llama2_7b-chat-arc_ssft_lr5e-5_template
+----------------------------------------
+|      Tasks       |Version|     Filter      |n-shot|  Metric   |   |Value |   |Stderr|
+|------------------|------:|-----------------|-----:|-----------|---|-----:|---|-----:|
+|arc_challenge_chat|      1|remove_whitespace|     0|exact_match|↑  |0.5631|±  |0.0145|
+
+✓ 완료: kmseong/llama2_7b-chat-arc_ssft_lr5e-5_template (task: arc-c)
+
+[2/5] 모델 평가 중: kmseong/llama2-7b-chat-lr5e-5-arc-safeinstr-lr5e-5-ratio0.1
+----------------------------------------
+|      Tasks       |Version|     Filter      |n-shot|  Metric   |   |Value |   |Stderr|
+|------------------|------:|-----------------|-----:|-----------|---|-----:|---|-----:|
+|arc_challenge_chat|      1|remove_whitespace|     0|exact_match|↑  |0.5845|±  |0.0144|
+
+✓ 완료: kmseong/llama2-7b-chat-lr5e-5-arc-safeinstr-lr5e-5-ratio0.1 (task: arc-c)
+
+[3/5] 모델 평가 중: kmseong/llama2-7b-chat-lr5e-5-arc-safedelta-scale0.1
+----------------------------------------
+|      Tasks       |Version|     Filter      |n-shot|  Metric   |   |Value |   |Stderr|
+|------------------|------:|-----------------|-----:|-----------|---|-----:|---|-----:|
+|arc_challenge_chat|      1|remove_whitespace|     0|exact_match|↑  |0.3652|±  |0.0141|
+
+✓ 완료: kmseong/llama2-7b-chat-lr5e-5-arc-safedelta-scale0.1 (task: arc-c)
+
+[4/5] 모델 평가 중: kmseong/llama2-7b-chat-lr5e-5-arc-resta-gamma0.3
+----------------------------------------
+|      Tasks       |Version|     Filter      |n-shot|  Metric   |   |Value |   |Stderr|
+|------------------|------:|-----------------|-----:|-----------|---|-----:|---|-----:|
+|arc_challenge_chat|      1|remove_whitespace|     0|exact_match|↑  |0.5648|±  |0.0145|
+
+✓ 완료: kmseong/llama2-7b-chat-lr5e-5-arc-resta-gamma0.3 (task: arc-c)
+
+[5/5] 모델 평가 중: kmseong/llama2_7b_chat-arc-c-WaRP-lr5e-5
+----------------------------------------
+|      Tasks       |Version|     Filter      |n-shot|  Metric   |   |Value |   |Stderr|
+|------------------|------:|-----------------|-----:|-----------|---|-----:|---|-----:|
+|arc_challenge_chat|      1|remove_whitespace|     0|exact_match|↑  |0.5853|±  |0.0144|
+
+✓ 완료: kmseong/llama2_7b_chat-arc-c-WaRP-lr5e-5 (task: arc-c)
+
+============================================================

@@ -1,0 +1,9 @@
+평가 시작 시간: Sun May  3 04:26:59 PM KST 2026
+고정 시드: 42
+
+
+==========================================
+[1/5] 모델 평가 중: kmseong/llama2_7b-chat-arc_ssft_lr5e-5_template
+==========================================
+[1/2] task 평가 중: hendrycks_math_safe
+2026-05-03:16:27:00 INFO     [config.evaluate_config:301] Using default fewshot_as_multiturn=True.
