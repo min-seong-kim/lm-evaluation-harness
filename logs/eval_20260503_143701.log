@@ -1,0 +1,10 @@
+평가 시작 시간: Sun May  3 02:37:01 PM KST 2026
+고정 시드: 42
+
+
+==========================================
+[1/2] 모델 평가 중: kmseong/llama2_7b-chat-Safety-FT-lr5e-5
+==========================================
+[2/2] task 평가 중: arc-c
+eval_models.sh: line 85: lm_eval: command not found
+✗ 실패: kmseong/llama2_7b-chat-Safety-FT-lr5e-5 (task: arc-c) - 종료 코드: 127

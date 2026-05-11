@@ -1,0 +1,41 @@
+============================================================
+평가 결과 요약
+============================================================
+
+[1/3] 모델 평가 중: kmseong/llama2_7b_chat_mmlu_freeze_sn_lr5e-5
+----------------------------------------
+|      Groups      |Version|Filter|n-shot|Metric|   |Value |   |Stderr|
+|------------------|------:|------|------|------|---|-----:|---|-----:|
+|mmlu              |      2|none  |      |acc   |↑  |0.4853|±  |0.0041|
+| - humanities     |      2|none  |      |acc   |↑  |0.4525|±  |0.0069|
+| - other          |      2|none  |      |acc   |↑  |0.5484|±  |0.0087|
+| - social sciences|      2|none  |      |acc   |↑  |0.5639|±  |0.0088|
+| - stem           |      2|none  |      |acc   |↑  |0.3952|±  |0.0086|
+
+✓ 완료: kmseong/llama2_7b_chat_mmlu_freeze_sn_lr5e-5 (task: mmlu)
+
+[2/3] 모델 평가 중: kmseong/llama2_7b_chat_mmlu_freeze_rsn_lr5e-5
+----------------------------------------
+|      Groups      |Version|Filter|n-shot|Metric|   |Value |   |Stderr|
+|------------------|------:|------|------|------|---|-----:|---|-----:|
+|mmlu              |      2|none  |      |acc   |↑  |0.4845|±  |0.0041|
+| - humanities     |      2|none  |      |acc   |↑  |0.4623|±  |0.0070|
+| - other          |      2|none  |      |acc   |↑  |0.5404|±  |0.0086|
+| - social sciences|      2|none  |      |acc   |↑  |0.5619|±  |0.0087|
+| - stem           |      2|none  |      |acc   |↑  |0.3873|±  |0.0086|
+
+✓ 완료: kmseong/llama2_7b_chat_mmlu_freeze_rsn_lr5e-5 (task: mmlu)
+
+[3/3] 모델 평가 중: kmseong/llama2-7b-chat-WaRP-mmlu-lr5e-5
+----------------------------------------
+|      Groups      |Version|Filter|n-shot|Metric|   |Value |   |Stderr|
+|------------------|------:|------|------|------|---|-----:|---|-----:|
+|mmlu              |      2|none  |      |acc   |↑  |0.4932|±  |0.0041|
+| - humanities     |      2|none  |      |acc   |↑  |0.4589|±  |0.0069|
+| - other          |      2|none  |      |acc   |↑  |0.5610|±  |0.0087|
+| - social sciences|      2|none  |      |acc   |↑  |0.5583|±  |0.0088|
+| - stem           |      2|none  |      |acc   |↑  |0.4142|±  |0.0087|
+
+✓ 완료: kmseong/llama2-7b-chat-WaRP-mmlu-lr5e-5 (task: mmlu)
+
+============================================================

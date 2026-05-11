@@ -1,0 +1,8 @@
+평가 시작 시간: Mon May  4 01:30:32 AM KST 2026
+고정 시드: 42
+
+
+==========================================
+[1/1] 모델 평가 중: /home/yonsei_jong/Safety-WaRP-LLM/checkpoints/phase3_non_freeze_20260504_000658/final_model
+==========================================
+[1/2] task 평가 중: gsm8k
