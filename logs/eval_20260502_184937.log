@@ -1,0 +1,22 @@
+평가 시작 시간: Sat May  2 06:49:37 PM KST 2026
+고정 시드: 42
+
+
+==========================================
+[1/4] 모델 평가 중: kmseong/llama-3.2-3b-instruct-only-sn-tuned-lr5e-5
+==========================================
+[1/2] task 평가 중: hendrycks_math_safe
+2026-05-02:18:49:37 INFO     [config.evaluate_config:301] Using default fewshot_as_multiturn=True.
+Traceback (most recent call last):
+  File "/home/korea_bupj/miniconda3/envs/hb-eval/bin/lm_eval", line 7, in <module>
+    sys.exit(cli_evaluate())
+  File "/home/korea_bupj/miniconda3/envs/hb-eval/lib/python3.10/site-packages/lm_eval/__main__.py", line 10, in cli_evaluate
+    parser.execute(args)
+  File "/home/korea_bupj/miniconda3/envs/hb-eval/lib/python3.10/site-packages/lm_eval/_cli/harness.py", line 60, in execute
+    args.func(args)
+  File "/home/korea_bupj/miniconda3/envs/hb-eval/lib/python3.10/site-packages/lm_eval/_cli/run.py", line 365, in _execute
+    task_manager = cfg.process_tasks(cfg.metadata)
+  File "/home/korea_bupj/miniconda3/envs/hb-eval/lib/python3.10/site-packages/lm_eval/config/evaluate_config.py", line 408, in process_tasks
+    raise ValueError(f"Tasks not found: {missing}")
+ValueError: Tasks not found: hendrycks_math_safe
+✗ 실패: kmseong/llama-3.2-3b-instruct-only-sn-tuned-lr5e-5 (task: hendrycks_math_safe) - 종료 코드: 1

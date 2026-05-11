@@ -1,0 +1,68 @@
+============================================================
+평가 결과 요약
+============================================================
+
+[1/7] 모델 평가 중: kmseong/Llama-3.1-8B-base-gsm8k-SSFT_lr1e-5
+----------------------------------------
+|Tasks|Version|     Filter     |n-shot|  Metric   |   |Value |   |Stderr|
+|-----|------:|----------------|-----:|-----------|---|-----:|---|-----:|
+|gsm8k|      3|flexible-extract|     5|exact_match|↑  |0.5709|±  |0.0136|
+|     |       |strict-match    |     5|exact_match|↑  |0.5663|±  |0.0137|
+
+✓ 완료: kmseong/Llama-3.1-8B-base-gsm8k-SSFT_lr1e-5 (task: gsm8k)
+
+[2/7] 모델 평가 중: kmseong/llama3.1-8b-base-gsm8k-safeinstr-ratio0.1-lr1e-5
+----------------------------------------
+|Tasks|Version|     Filter     |n-shot|  Metric   |   |Value |   |Stderr|
+|-----|------:|----------------|-----:|-----------|---|-----:|---|-----:|
+|gsm8k|      3|flexible-extract|     5|exact_match|↑  |0.5785|±  |0.0136|
+|     |       |strict-match    |     5|exact_match|↑  |0.5732|±  |0.0136|
+
+✓ 완료: kmseong/llama3.1-8b-base-gsm8k-safeinstr-ratio0.1-lr1e-5 (task: gsm8k)
+
+[3/7] 모델 평가 중: kmseong/llama3.1-8b-base-lr5e-5-gsm8k-resta-gamma0.3
+----------------------------------------
+|Tasks|Version|     Filter     |n-shot|  Metric   |   |Value |   |Stderr|
+|-----|------:|----------------|-----:|-----------|---|-----:|---|-----:|
+|gsm8k|      3|flexible-extract|     5|exact_match|↑  |0.4867|±  |0.0138|
+|     |       |strict-match    |     5|exact_match|↑  |0.4807|±  |0.0138|
+
+✓ 완료: kmseong/llama3.1-8b-base-lr5e-5-gsm8k-resta-gamma0.3 (task: gsm8k)
+
+[4/7] 모델 평가 중: kmseong/llama3.1-8b-base-lr1e-5-gsm8k-safedelta-scale0.1
+----------------------------------------
+|Tasks|Version|     Filter     |n-shot|  Metric   |   |Value |   |Stderr|
+|-----|------:|----------------|-----:|-----------|---|-----:|---|-----:|
+|gsm8k|      3|flexible-extract|     5|exact_match|↑  |0.4132|±  |0.0136|
+|     |       |strict-match    |     5|exact_match|↑  |0.4132|±  |0.0136|
+
+✓ 완료: kmseong/llama3.1-8b-base-lr1e-5-gsm8k-safedelta-scale0.1 (task: gsm8k)
+
+[5/7] 모델 평가 중: kmseong/llama3.1-8B_base_gsm8k_ft_freeze_sn_lr1e-5
+----------------------------------------
+|Tasks|Version|     Filter     |n-shot|  Metric   |   |Value |   |Stderr|
+|-----|------:|----------------|-----:|-----------|---|-----:|---|-----:|
+|gsm8k|      3|flexible-extract|     5|exact_match|↑  |0.6323|±  |0.0133|
+|     |       |strict-match    |     5|exact_match|↑  |0.6247|±  |0.0133|
+
+✓ 완료: kmseong/llama3.1-8B_base_gsm8k_ft_freeze_sn_lr1e-5 (task: gsm8k)
+
+[6/7] 모델 평가 중: kmseong/llama3.1-8B_base_gsm8k_ft_freeze_rsn_lr1e-5
+----------------------------------------
+|Tasks|Version|     Filter     |n-shot|  Metric   |   |Value |   |Stderr|
+|-----|------:|----------------|-----:|-----------|---|-----:|---|-----:|
+|gsm8k|      3|flexible-extract|     5|exact_match|↑  |0.6331|±  |0.0133|
+|     |       |strict-match    |     5|exact_match|↑  |0.6323|±  |0.0133|
+
+✓ 완료: kmseong/llama3.1-8B_base_gsm8k_ft_freeze_rsn_lr1e-5 (task: gsm8k)
+
+[7/7] 모델 평가 중: kmseong/llama3.1-8b-base-warp-gsm8k-lr1e-5
+----------------------------------------
+|Tasks|Version|     Filter     |n-shot|  Metric   |   |Value |   |Stderr|
+|-----|------:|----------------|-----:|-----------|---|-----:|---|-----:|
+|gsm8k|      3|flexible-extract|     5|exact_match|↑  |0.5588|±  |0.0137|
+|     |       |strict-match    |     5|exact_match|↑  |0.5504|±  |0.0137|
+
+✓ 완료: kmseong/llama3.1-8b-base-warp-gsm8k-lr1e-5 (task: gsm8k)
+
+============================================================

@@ -1,0 +1,23 @@
+============================================================
+평가 결과 요약
+============================================================
+
+[1/2] 모델 평가 중: kmseong/llama-2-7b-chat-hf-arc-sn-tuned-lr5e-5
+----------------------------------------
+|    Tasks    |Version|Filter|n-shot| Metric |   |Value |   |Stderr|
+|-------------|------:|------|-----:|--------|---|-----:|---|-----:|
+|arc_challenge|      1|none  |     5|acc     |↑  |0.3720|±  |0.0141|
+|             |       |none  |     5|acc_norm|↑  |0.3959|±  |0.0143|
+
+✓ 완료: kmseong/llama-2-7b-chat-hf-arc-sn-tuned-lr5e-5 (task: arc-c)
+
+[2/2] 모델 평가 중: kmseong/llama-2-7b-chat-hf-arc-rsn-tuned-lr5e-5
+----------------------------------------
+|    Tasks    |Version|Filter|n-shot| Metric |   |Value |   |Stderr|
+|-------------|------:|------|-----:|--------|---|-----:|---|-----:|
+|arc_challenge|      1|none  |     5|acc     |↑  |0.4087|±  |0.0144|
+|             |       |none  |     5|acc_norm|↑  |0.4275|±  |0.0145|
+
+✓ 완료: kmseong/llama-2-7b-chat-hf-arc-rsn-tuned-lr5e-5 (task: arc-c)
+
+============================================================

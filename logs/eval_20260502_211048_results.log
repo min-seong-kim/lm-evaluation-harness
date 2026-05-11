@@ -1,0 +1,29 @@
+============================================================
+평가 결과 요약
+============================================================
+
+[1/3] 모델 평가 중: kmseong/llama-3.2-3b-instruct-only-rsn-tuned-lr5e-5
+----------------------------------------
+|      Groups       |Version|Filter|n-shot|  Metric   |   |Value |   |Stderr|
+|-------------------|------:|------|------|-----------|---|-----:|---|-----:|
+|hendrycks_math_safe|      1|none  |      |exact_match|↑  |0.0304|±  |0.0024|
+
+✓ 완료: kmseong/llama-3.2-3b-instruct-only-rsn-tuned-lr5e-5 (task: hendrycks_math_safe)
+
+[2/3] 모델 평가 중: kmseong/llama-3.2-3b-instruct-gsm8k-sn-tuned-lr5e-5
+----------------------------------------
+|      Groups       |Version|Filter|n-shot|  Metric   |   |Value|   |Stderr|
+|-------------------|------:|------|------|-----------|---|----:|---|-----:|
+|hendrycks_math_safe|      1|none  |      |exact_match|↑  |0.074|±  |0.0037|
+
+✓ 완료: kmseong/llama-3.2-3b-instruct-gsm8k-sn-tuned-lr5e-5 (task: hendrycks_math_safe)
+
+[3/3] 모델 평가 중: kmseong/llama-3.2-3b-instruct-gsm8k-rsn-tuned-lr5e-5
+----------------------------------------
+|      Groups       |Version|Filter|n-shot|  Metric   |   |Value |   |Stderr|
+|-------------------|------:|------|------|-----------|---|-----:|---|-----:|
+|hendrycks_math_safe|      1|none  |      |exact_match|↑  |0.0694|±  |0.0036|
+
+✓ 완료: kmseong/llama-3.2-3b-instruct-gsm8k-rsn-tuned-lr5e-5 (task: hendrycks_math_safe)
+
+============================================================

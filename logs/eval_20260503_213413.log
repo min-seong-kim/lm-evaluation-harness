@@ -1,0 +1,154 @@
+평가 시작 시간: Sun May  3 09:34:13 PM KST 2026
+고정 시드: 42
+
+
+==========================================
+[1/2] 모델 평가 중: kmseong/llama-2-7b-chat-hf-arc-sn-tuned-lr5e-5
+==========================================
+[2/2] task 평가 중: arc-c
+2026-05-03:21:34:13 INFO     [config.evaluate_config:301] Using default fewshot_as_multiturn=True.
+2026-05-03:21:34:16 INFO     [_cli.run:376] Selected Tasks: ['arc_challenge_chat']
+2026-05-03:21:34:16 INFO     [evaluator:211] Setting random seed to 42 | Setting numpy seed to 42 | Setting torch manual seed to 42 | Setting fewshot manual seed to 42
+2026-05-03:21:34:16 INFO     [evaluator:236] Initializing vllm model, with arguments: {'pretrained': 'kmseong/llama-2-7b-chat-hf-arc-sn-tuned-lr5e-5', 'seed': 42, 'enforce_eager': True, 'enable_prefix_caching': False, 'tensor_parallel_size': 1, 'data_parallel_size': 1, 'dtype': 'auto', 'gpu_memory_utilization': 0.7}
+INFO 05-03 21:34:22 [utils.py:233] non-default args: {'seed': 42, 'enable_prefix_caching': False, 'gpu_memory_utilization': 0.7, 'disable_log_stats': True, 'enforce_eager': True, 'model': 'kmseong/llama-2-7b-chat-hf-arc-sn-tuned-lr5e-5'}
+INFO 05-03 21:34:30 [nixl_utils.py:20] Setting UCX_RCACHE_MAX_UNRELEASED to '1024' to avoid a rare memory leak in UCX when using NIXL.
+WARNING 05-03 21:34:30 [nixl_utils.py:34] NIXL is not available
+WARNING 05-03 21:34:30 [nixl_utils.py:44] NIXL agent config is not available
+INFO 05-03 21:34:30 [model.py:555] Resolved architecture: LlamaForCausalLM
+INFO 05-03 21:34:30 [model.py:1680] Using max model len 4096
+INFO 05-03 21:34:30 [scheduler.py:239] Chunked prefill is enabled with max_num_batched_tokens=16384.
+INFO 05-03 21:34:30 [vllm.py:840] Asynchronous scheduling is enabled.
+WARNING 05-03 21:34:30 [vllm.py:896] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none
+WARNING 05-03 21:34:30 [vllm.py:914] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.
+INFO 05-03 21:34:30 [kernel.py:205] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'])
+INFO 05-03 21:34:30 [vllm.py:1089] Cudagraph is disabled under eager mode
+INFO 05-03 21:34:30 [compilation.py:303] Enabled custom fusions: norm_quant, act_quant
+(EngineCore pid=445215) INFO 05-03 21:34:32 [core.py:109] Initializing a V1 LLM engine (v0.20.0) with config: model='kmseong/llama-2-7b-chat-hf-arc-sn-tuned-lr5e-5', speculative_config=None, tokenizer='kmseong/llama-2-7b-chat-hf-arc-sn-tuned-lr5e-5', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=4096, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, decode_context_parallel_size=1, dcp_comm_backend=ag_rs, disable_custom_all_reduce=False, quantization=None, quantization_config=None, enforce_eager=True, enable_return_routed_experts=False, kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, kv_cache_metrics=False, kv_cache_metrics_sample=0.01, cudagraph_metrics=False, enable_layerwise_nvtx_tracing=False, enable_mfu_metrics=False, enable_mm_processor_stats=False, enable_logging_iteration_details=False), seed=42, served_model_name=kmseong/llama-2-7b-chat-hf-arc-sn-tuned-lr5e-5, enable_prefix_caching=False, enable_chunked_prefill=True, pooler_config=None, compilation_config={'mode': <CompilationMode.NONE: 0>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['all'], 'ir_enable_torch_wrap': False, 'splitting_ops': [], 'compile_mm_encoder': False, 'cudagraph_mm_encoder': False, 'encoder_cudagraph_token_budgets': [], 'encoder_cudagraph_max_vision_items_per_batch': 0, 'encoder_cudagraph_max_frames_per_batch': None, 'compile_sizes': [], 'compile_ranges_endpoints': [16384], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'size_asserts': False, 'alignment_asserts': False, 'scalar_asserts': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.NONE: 0>, 'cudagraph_num_of_warmups': 0, 'cudagraph_capture_sizes': [], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {'fuse_norm_quant': True, 'fuse_act_quant': True, 'fuse_attn_quant': False, 'enable_sp': False, 'fuse_gemm_comms': False, 'fuse_allreduce_rms': False}, 'max_cudagraph_capture_size': 0, 'dynamic_shapes_config': {'type': <DynamicShapesType.BACKED: 'backed'>, 'evaluate_guards': False, 'assume_32_bit_indexing': False}, 'local_cache_dir': None, 'fast_moe_cold_start': False, 'static_all_moe_layers': []}, kernel_config=KernelConfig(ir_op_priority=IrOpPriorityConfig(rms_norm=['vllm_c', 'native']), enable_flashinfer_autotune=True, moe_backend='auto')
+(EngineCore pid=445215) INFO 05-03 21:34:33 [parallel_state.py:1402] world_size=1 rank=0 local_rank=0 distributed_init_method=tcp://10.34.11.36:55433 backend=nccl
+(EngineCore pid=445215) INFO 05-03 21:34:33 [parallel_state.py:1715] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, EP rank N/A, EPLB rank N/A
+(EngineCore pid=445215) INFO 05-03 21:34:35 [gpu_model_runner.py:4777] Starting to load model kmseong/llama-2-7b-chat-hf-arc-sn-tuned-lr5e-5...
+(EngineCore pid=445215) INFO 05-03 21:34:36 [cuda.py:368] Using FLASHINFER attention backend out of potential backends: ['FLASHINFER', 'FLASH_ATTN', 'TRITON_ATTN', 'FLEX_ATTENTION'].
+(EngineCore pid=445215) INFO 05-03 21:34:36 [selector.py:136] Using HND KV cache layout for FLASHINFER backend.
+(EngineCore pid=445215) INFO 05-03 21:34:37 [weight_utils.py:904] Filesystem type for checkpoints: OVERLAY. Checkpoint size: 12.55 GiB. Available RAM: 2019.73 GiB.
+(EngineCore pid=445215) INFO 05-03 21:34:37 [weight_utils.py:927] Auto-prefetch is disabled because the filesystem (OVERLAY) is not a recognized network FS (NFS/Lustre). If you want to force prefetching, start vLLM with --safetensors-load-strategy=prefetch.
+(EngineCore pid=445215) Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00<?, ?it/s]
+(EngineCore pid=445215) Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00<00:00,  4.30it/s]
+(EngineCore pid=445215) Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:00<00:00,  4.37it/s]
+(EngineCore pid=445215) Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:00<00:00,  4.09it/s]
+(EngineCore pid=445215) Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:00<00:00,  4.93it/s]
+(EngineCore pid=445215) Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:00<00:00,  4.65it/s]
+(EngineCore pid=445215) 
+(EngineCore pid=445215) INFO 05-03 21:34:38 [default_loader.py:384] Loading weights took 0.88 seconds
+(EngineCore pid=445215) INFO 05-03 21:34:40 [gpu_model_runner.py:4879] Model loading took 12.55 GiB memory and 2.693995 seconds
+(EngineCore pid=445215) INFO 05-03 21:34:41 [gpu_worker.py:440] Available KV cache memory: 107.32 GiB
+(EngineCore pid=445215) INFO 05-03 21:34:41 [kv_cache_utils.py:1711] GPU KV cache size: 219,776 tokens
+(EngineCore pid=445215) INFO 05-03 21:34:41 [kv_cache_utils.py:1716] Maximum concurrency for 4,096 tokens per request: 53.66x
+(EngineCore pid=445215) INFO 05-03 21:34:42 [utils.py:60] `_KV_CACHE_LAYOUT_OVERRIDE` variable detected. Setting KV cache layout to HND.
+(EngineCore pid=445215) 2026-05-03 21:34:42,046 - INFO - autotuner.py:457 - flashinfer.jit: [Autotuner]: Autotuning process starts ...
+(EngineCore pid=445215) 2026-05-03 21:34:42,091 - INFO - autotuner.py:466 - flashinfer.jit: [Autotuner]: Autotuning process ends
+(EngineCore pid=445215) INFO 05-03 21:34:42 [kernel_warmup.py:69] Warming up FlashInfer attention.
+(EngineCore pid=445215) WARNING 05-03 21:34:42 [flashinfer.py:405] Using TRTLLM prefill attention (auto-detected).
+(EngineCore pid=445215) INFO 05-03 21:34:42 [core.py:306] init engine (profile, create kv cache, warmup model) took 2.39 s
+(EngineCore pid=445215) WARNING 05-03 21:34:42 [vllm.py:896] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none
+(EngineCore pid=445215) WARNING 05-03 21:34:42 [vllm.py:914] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.
+(EngineCore pid=445215) INFO 05-03 21:34:42 [kernel.py:205] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'])
+(EngineCore pid=445215) INFO 05-03 21:34:42 [vllm.py:1089] Cudagraph is disabled under eager mode
+2026-05-03:21:34:49 INFO     [tasks:700] Selected tasks:
+2026-05-03:21:34:49 INFO     [tasks:691] Task: arc_challenge_chat (arc/arc_challenge_chat.yaml)
+2026-05-03:21:34:49 INFO     [evaluator:314] arc_challenge_chat: Using gen_kwargs: {'max_gen_toks': 100, 'until': ['\n\n', '.']}
+2026-05-03:21:34:49 INFO     [evaluator:329] num_fewshot has been set to 0 for arc_challenge_chat in its config. Manual configuration will be ignored.
+2026-05-03:21:34:49 WARNING  [evaluator:490] Chat template formatting change affects loglikelihood and multiple-choice tasks. See docs/chat-template-readme.md for details.
+2026-05-03:21:34:49 INFO     [api.task:311] Building contexts for arc_challenge_chat on rank 0...
+  0%|          | 0/1172 [00:00<?, ?it/s]  5%|▌         | 61/1172 [00:00<00:01, 606.17it/s] 11%|█         | 125/1172 [00:00<00:01, 622.33it/s] 16%|█▌        | 188/1172 [00:00<00:01, 623.62it/s] 21%|██▏       | 251/1172 [00:00<00:01, 615.65it/s] 27%|██▋       | 315/1172 [00:00<00:01, 621.30it/s] 32%|███▏      | 380/1172 [00:00<00:01, 627.92it/s] 38%|███▊      | 445/1172 [00:00<00:01, 632.79it/s] 44%|████▎     | 510/1172 [00:00<00:01, 635.58it/s] 49%|████▉     | 575/1172 [00:00<00:00, 637.14it/s] 55%|█████▍    | 640/1172 [00:01<00:00, 638.28it/s] 60%|██████    | 705/1172 [00:01<00:00, 639.39it/s] 66%|██████▌   | 769/1172 [00:01<00:00, 632.02it/s] 71%|███████   | 833/1172 [00:01<00:00, 631.74it/s] 77%|███████▋  | 897/1172 [00:01<00:00, 633.06it/s] 82%|████████▏ | 961/1172 [00:01<00:00, 633.15it/s] 87%|████████▋ | 1025/1172 [00:01<00:00, 634.45it/s] 93%|█████████▎| 1089/1172 [00:01<00:00, 635.13it/s] 98%|█████████▊| 1153/1172 [00:01<00:00, 636.46it/s]100%|██████████| 1172/1172 [00:01<00:00, 632.18it/s]
+2026-05-03:21:34:51 INFO     [evaluator:584] Running generate_until requests
+Running generate_until requests:   0%|          | 0/1172 [00:00<?, ?it/s]Running generate_until requests:   0%|          | 1/1172 [00:00<05:05,  3.83it/s]Running generate_until requests:   3%|▎         | 33/1172 [00:00<00:10, 109.47it/s]Running generate_until requests:   6%|▌         | 65/1172 [00:00<00:06, 175.77it/s]Running generate_until requests:   8%|▊         | 97/1172 [00:00<00:04, 220.22it/s]Running generate_until requests:  14%|█▎        | 161/1172 [00:00<00:03, 262.75it/s]Running generate_until requests:  19%|█▉        | 225/1172 [00:01<00:03, 276.24it/s]Running generate_until requests:  25%|██▍       | 289/1172 [00:01<00:02, 299.75it/s]Running generate_until requests:  27%|██▋       | 321/1172 [00:01<00:02, 303.77it/s]Running generate_until requests:  33%|███▎      | 385/1172 [00:01<00:02, 285.36it/s]Running generate_until requests:  38%|███▊      | 449/1172 [00:01<00:02, 309.68it/s]Running generate_until requests:  44%|████▍     | 513/1172 [00:01<00:02, 328.54it/s]Running generate_until requests:  49%|████▉     | 577/1172 [00:02<00:01, 337.98it/s]Running generate_until requests:  55%|█████▍    | 641/1172 [00:02<00:01, 355.57it/s]Running generate_until requests:  60%|██████    | 705/1172 [00:02<00:01, 369.48it/s]Running generate_until requests:  63%|██████▎   | 743/1172 [00:02<00:01, 361.64it/s]Running generate_until requests:  68%|██████▊   | 801/1172 [00:02<00:01, 353.18it/s]Running generate_until requests:  74%|███████▍  | 865/1172 [00:02<00:00, 350.51it/s]Running generate_until requests:  79%|███████▉  | 929/1172 [00:03<00:00, 351.91it/s]Running generate_until requests:  82%|████████▏ | 965/1172 [00:03<00:00, 347.66it/s]Running generate_until requests:  87%|████████▋ | 1025/1172 [00:03<00:00, 349.66it/s]Running generate_until requests:  93%|█████████▎| 1089/1172 [00:03<00:00, 364.83it/s]Running generate_until requests:  98%|█████████▊| 1153/1172 [00:03<00:00, 379.10it/s]Running generate_until requests: 100%|██████████| 1172/1172 [00:03<00:00, 323.37it/s]
+(EngineCore pid=445215) INFO 05-03 21:35:05 [core.py:1238] Shutdown initiated (timeout=0)
+(EngineCore pid=445215) INFO 05-03 21:35:05 [core.py:1261] Shutdown complete
+2026-05-03:21:35:05 INFO     [loggers.evaluation_tracker:247] Saving results aggregated
+2026-05-03:21:35:05 INFO     [loggers.evaluation_tracker:119] Saving per-task samples to eval_results/kmseong__llama-2-7b-chat-hf-arc-sn-tuned-lr5e-5/*.jsonl
+vllm ({'pretrained': 'kmseong/llama-2-7b-chat-hf-arc-sn-tuned-lr5e-5', 'seed': 42, 'enforce_eager': True, 'enable_prefix_caching': False, 'tensor_parallel_size': 1, 'data_parallel_size': 1, 'dtype': 'auto', 'gpu_memory_utilization': 0.7}), gen_kwargs: ({}), limit: None, num_fewshot: 5, batch_size: 32
+|      Tasks       |Version|     Filter      |n-shot|  Metric   |   |Value |   |Stderr|
+|------------------|------:|-----------------|-----:|-----------|---|-----:|---|-----:|
+|arc_challenge_chat|      1|remove_whitespace|     0|exact_match|↑  |0.5973|±  |0.0143|
+
+✓ 완료: kmseong/llama-2-7b-chat-hf-arc-sn-tuned-lr5e-5 (task: arc-c)
+
+==========================================
+[2/2] 모델 평가 중: kmseong/llama-2-7b-chat-hf-arc-rsn-tuned-lr5e-5
+==========================================
+[2/2] task 평가 중: arc-c
+2026-05-03:21:35:07 INFO     [config.evaluate_config:301] Using default fewshot_as_multiturn=True.
+2026-05-03:21:35:10 INFO     [_cli.run:376] Selected Tasks: ['arc_challenge_chat']
+2026-05-03:21:35:10 INFO     [evaluator:211] Setting random seed to 42 | Setting numpy seed to 42 | Setting torch manual seed to 42 | Setting fewshot manual seed to 42
+2026-05-03:21:35:10 INFO     [evaluator:236] Initializing vllm model, with arguments: {'pretrained': 'kmseong/llama-2-7b-chat-hf-arc-rsn-tuned-lr5e-5', 'seed': 42, 'enforce_eager': True, 'enable_prefix_caching': False, 'tensor_parallel_size': 1, 'data_parallel_size': 1, 'dtype': 'auto', 'gpu_memory_utilization': 0.7}
+INFO 05-03 21:35:14 [utils.py:233] non-default args: {'seed': 42, 'enable_prefix_caching': False, 'gpu_memory_utilization': 0.7, 'disable_log_stats': True, 'enforce_eager': True, 'model': 'kmseong/llama-2-7b-chat-hf-arc-rsn-tuned-lr5e-5'}
+INFO 05-03 21:35:23 [nixl_utils.py:20] Setting UCX_RCACHE_MAX_UNRELEASED to '1024' to avoid a rare memory leak in UCX when using NIXL.
+WARNING 05-03 21:35:23 [nixl_utils.py:34] NIXL is not available
+WARNING 05-03 21:35:23 [nixl_utils.py:44] NIXL agent config is not available
+INFO 05-03 21:35:23 [model.py:555] Resolved architecture: LlamaForCausalLM
+INFO 05-03 21:35:23 [model.py:1680] Using max model len 4096
+INFO 05-03 21:35:23 [scheduler.py:239] Chunked prefill is enabled with max_num_batched_tokens=16384.
+INFO 05-03 21:35:23 [vllm.py:840] Asynchronous scheduling is enabled.
+WARNING 05-03 21:35:23 [vllm.py:896] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none
+WARNING 05-03 21:35:23 [vllm.py:914] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.
+INFO 05-03 21:35:23 [kernel.py:205] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'])
+INFO 05-03 21:35:23 [vllm.py:1089] Cudagraph is disabled under eager mode
+INFO 05-03 21:35:23 [compilation.py:303] Enabled custom fusions: norm_quant, act_quant
+(EngineCore pid=451203) INFO 05-03 21:35:24 [core.py:109] Initializing a V1 LLM engine (v0.20.0) with config: model='kmseong/llama-2-7b-chat-hf-arc-rsn-tuned-lr5e-5', speculative_config=None, tokenizer='kmseong/llama-2-7b-chat-hf-arc-rsn-tuned-lr5e-5', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=4096, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, decode_context_parallel_size=1, dcp_comm_backend=ag_rs, disable_custom_all_reduce=False, quantization=None, quantization_config=None, enforce_eager=True, enable_return_routed_experts=False, kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, kv_cache_metrics=False, kv_cache_metrics_sample=0.01, cudagraph_metrics=False, enable_layerwise_nvtx_tracing=False, enable_mfu_metrics=False, enable_mm_processor_stats=False, enable_logging_iteration_details=False), seed=42, served_model_name=kmseong/llama-2-7b-chat-hf-arc-rsn-tuned-lr5e-5, enable_prefix_caching=False, enable_chunked_prefill=True, pooler_config=None, compilation_config={'mode': <CompilationMode.NONE: 0>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['all'], 'ir_enable_torch_wrap': False, 'splitting_ops': [], 'compile_mm_encoder': False, 'cudagraph_mm_encoder': False, 'encoder_cudagraph_token_budgets': [], 'encoder_cudagraph_max_vision_items_per_batch': 0, 'encoder_cudagraph_max_frames_per_batch': None, 'compile_sizes': [], 'compile_ranges_endpoints': [16384], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'size_asserts': False, 'alignment_asserts': False, 'scalar_asserts': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.NONE: 0>, 'cudagraph_num_of_warmups': 0, 'cudagraph_capture_sizes': [], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {'fuse_norm_quant': True, 'fuse_act_quant': True, 'fuse_attn_quant': False, 'enable_sp': False, 'fuse_gemm_comms': False, 'fuse_allreduce_rms': False}, 'max_cudagraph_capture_size': 0, 'dynamic_shapes_config': {'type': <DynamicShapesType.BACKED: 'backed'>, 'evaluate_guards': False, 'assume_32_bit_indexing': False}, 'local_cache_dir': None, 'fast_moe_cold_start': False, 'static_all_moe_layers': []}, kernel_config=KernelConfig(ir_op_priority=IrOpPriorityConfig(rms_norm=['vllm_c', 'native']), enable_flashinfer_autotune=True, moe_backend='auto')
+(EngineCore pid=451203) INFO 05-03 21:35:26 [parallel_state.py:1402] world_size=1 rank=0 local_rank=0 distributed_init_method=tcp://10.34.11.36:52577 backend=nccl
+(EngineCore pid=451203) INFO 05-03 21:35:26 [parallel_state.py:1715] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, EP rank N/A, EPLB rank N/A
+(EngineCore pid=451203) INFO 05-03 21:35:27 [gpu_model_runner.py:4777] Starting to load model kmseong/llama-2-7b-chat-hf-arc-rsn-tuned-lr5e-5...
+(EngineCore pid=451203) INFO 05-03 21:35:28 [cuda.py:368] Using FLASHINFER attention backend out of potential backends: ['FLASHINFER', 'FLASH_ATTN', 'TRITON_ATTN', 'FLEX_ATTENTION'].
+(EngineCore pid=451203) INFO 05-03 21:35:28 [selector.py:136] Using HND KV cache layout for FLASHINFER backend.
+(EngineCore pid=451203) INFO 05-03 21:35:29 [weight_utils.py:904] Filesystem type for checkpoints: OVERLAY. Checkpoint size: 12.55 GiB. Available RAM: 2018.44 GiB.
+(EngineCore pid=451203) INFO 05-03 21:35:29 [weight_utils.py:927] Auto-prefetch is disabled because the filesystem (OVERLAY) is not a recognized network FS (NFS/Lustre). If you want to force prefetching, start vLLM with --safetensors-load-strategy=prefetch.
+(EngineCore pid=451203) Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00<?, ?it/s]
+(EngineCore pid=451203) Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00<00:00,  4.23it/s]
+(EngineCore pid=451203) Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:00<00:00,  4.27it/s]
+(EngineCore pid=451203) Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:00<00:00,  4.03it/s]
+(EngineCore pid=451203) Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:00<00:00,  4.92it/s]
+(EngineCore pid=451203) Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:00<00:00,  4.61it/s]
+(EngineCore pid=451203) 
+(EngineCore pid=451203) INFO 05-03 21:35:30 [default_loader.py:384] Loading weights took 0.88 seconds
+(EngineCore pid=451203) INFO 05-03 21:35:32 [gpu_model_runner.py:4879] Model loading took 12.55 GiB memory and 2.550072 seconds
+(EngineCore pid=451203) INFO 05-03 21:35:34 [gpu_worker.py:440] Available KV cache memory: 101.32 GiB
+(EngineCore pid=451203) INFO 05-03 21:35:34 [kv_cache_utils.py:1711] GPU KV cache size: 207,504 tokens
+(EngineCore pid=451203) INFO 05-03 21:35:34 [kv_cache_utils.py:1716] Maximum concurrency for 4,096 tokens per request: 50.66x
+(EngineCore pid=451203) INFO 05-03 21:35:34 [utils.py:60] `_KV_CACHE_LAYOUT_OVERRIDE` variable detected. Setting KV cache layout to HND.
+(EngineCore pid=451203) 2026-05-03 21:35:34,160 - INFO - autotuner.py:457 - flashinfer.jit: [Autotuner]: Autotuning process starts ...
+(EngineCore pid=451203) 2026-05-03 21:35:34,197 - INFO - autotuner.py:466 - flashinfer.jit: [Autotuner]: Autotuning process ends
+(EngineCore pid=451203) INFO 05-03 21:35:34 [kernel_warmup.py:69] Warming up FlashInfer attention.
+(EngineCore pid=451203) WARNING 05-03 21:35:34 [flashinfer.py:405] Using TRTLLM prefill attention (auto-detected).
+(EngineCore pid=451203) INFO 05-03 21:35:34 [core.py:306] init engine (profile, create kv cache, warmup model) took 2.01 s
+(EngineCore pid=451203) WARNING 05-03 21:35:34 [vllm.py:896] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none
+(EngineCore pid=451203) WARNING 05-03 21:35:34 [vllm.py:914] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.
+(EngineCore pid=451203) INFO 05-03 21:35:34 [kernel.py:205] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'])
+(EngineCore pid=451203) INFO 05-03 21:35:34 [vllm.py:1089] Cudagraph is disabled under eager mode
+2026-05-03:21:35:41 INFO     [tasks:700] Selected tasks:
+2026-05-03:21:35:41 INFO     [tasks:691] Task: arc_challenge_chat (arc/arc_challenge_chat.yaml)
+2026-05-03:21:35:41 INFO     [evaluator:314] arc_challenge_chat: Using gen_kwargs: {'max_gen_toks': 100, 'until': ['\n\n', '.']}
+2026-05-03:21:35:41 INFO     [evaluator:329] num_fewshot has been set to 0 for arc_challenge_chat in its config. Manual configuration will be ignored.
+2026-05-03:21:35:41 WARNING  [evaluator:490] Chat template formatting change affects loglikelihood and multiple-choice tasks. See docs/chat-template-readme.md for details.
+2026-05-03:21:35:41 INFO     [api.task:311] Building contexts for arc_challenge_chat on rank 0...
+  0%|          | 0/1172 [00:00<?, ?it/s]  5%|▍         | 57/1172 [00:00<00:01, 565.50it/s] 10%|█         | 120/1172 [00:00<00:01, 601.88it/s] 16%|█▌        | 182/1172 [00:00<00:01, 609.39it/s] 21%|██        | 245/1172 [00:00<00:01, 616.75it/s] 26%|██▌       | 307/1172 [00:00<00:01, 614.91it/s] 32%|███▏      | 371/1172 [00:00<00:01, 621.90it/s] 37%|███▋      | 434/1172 [00:00<00:01, 621.88it/s] 42%|████▏     | 498/1172 [00:00<00:01, 626.33it/s] 48%|████▊     | 561/1172 [00:00<00:00, 616.87it/s] 53%|█████▎    | 625/1172 [00:01<00:00, 621.08it/s] 59%|█████▉    | 689/1172 [00:01<00:00, 625.90it/s] 64%|██████▍   | 752/1172 [00:01<00:00, 624.54it/s] 70%|██████▉   | 817/1172 [00:01<00:00, 629.17it/s] 75%|███████▌  | 880/1172 [00:01<00:00, 626.46it/s] 80%|████████  | 943/1172 [00:01<00:00, 627.37it/s] 86%|████████▌ | 1006/1172 [00:01<00:00, 624.94it/s] 91%|█████████▏| 1070/1172 [00:01<00:00, 627.76it/s] 97%|█████████▋| 1133/1172 [00:01<00:00, 615.20it/s]100%|██████████| 1172/1172 [00:01<00:00, 620.15it/s]
+2026-05-03:21:35:43 INFO     [evaluator:584] Running generate_until requests
+Running generate_until requests:   0%|          | 0/1172 [00:00<?, ?it/s]Running generate_until requests:   0%|          | 1/1172 [00:00<05:53,  3.31it/s]Running generate_until requests:   3%|▎         | 33/1172 [00:00<00:13, 82.21it/s]Running generate_until requests:   6%|▌         | 65/1172 [00:00<00:09, 115.84it/s]Running generate_until requests:   8%|▊         | 97/1172 [00:00<00:08, 134.34it/s]Running generate_until requests:  11%|█         | 129/1172 [00:01<00:07, 137.34it/s]Running generate_until requests:  14%|█▎        | 161/1172 [00:01<00:05, 172.10it/s]Running generate_until requests:  16%|█▋        | 193/1172 [00:01<00:04, 200.57it/s]Running generate_until requests:  22%|██▏       | 257/1172 [00:01<00:03, 254.43it/s]Running generate_until requests:  27%|██▋       | 321/1172 [00:01<00:02, 286.90it/s]Running generate_until requests:  33%|███▎      | 385/1172 [00:01<00:02, 302.55it/s]Running generate_until requests:  38%|███▊      | 449/1172 [00:02<00:02, 316.50it/s]Running generate_until requests:  44%|████▍     | 513/1172 [00:02<00:01, 333.32it/s]Running generate_until requests:  49%|████▉     | 577/1172 [00:02<00:01, 351.11it/s]Running generate_until requests:  55%|█████▍    | 641/1172 [00:02<00:01, 365.57it/s]Running generate_until requests:  60%|██████    | 705/1172 [00:02<00:01, 369.98it/s]Running generate_until requests:  66%|██████▌   | 769/1172 [00:02<00:01, 382.15it/s]Running generate_until requests:  71%|███████   | 833/1172 [00:03<00:00, 378.37it/s]Running generate_until requests:  77%|███████▋  | 897/1172 [00:03<00:00, 380.08it/s]Running generate_until requests:  82%|████████▏ | 961/1172 [00:03<00:00, 385.88it/s]Running generate_until requests:  87%|████████▋ | 1025/1172 [00:03<00:00, 401.38it/s]Running generate_until requests:  93%|█████████▎| 1089/1172 [00:03<00:00, 416.07it/s]Running generate_until requests:  98%|█████████▊| 1153/1172 [00:03<00:00, 421.26it/s]Running generate_until requests: 100%|██████████| 1172/1172 [00:03<00:00, 308.31it/s]
+(EngineCore pid=451203) INFO 05-03 21:35:53 [core.py:1238] Shutdown initiated (timeout=0)
+(EngineCore pid=451203) INFO 05-03 21:35:53 [core.py:1261] Shutdown complete
+2026-05-03:21:35:54 INFO     [loggers.evaluation_tracker:247] Saving results aggregated
+2026-05-03:21:35:54 INFO     [loggers.evaluation_tracker:119] Saving per-task samples to eval_results/kmseong__llama-2-7b-chat-hf-arc-rsn-tuned-lr5e-5/*.jsonl
+vllm ({'pretrained': 'kmseong/llama-2-7b-chat-hf-arc-rsn-tuned-lr5e-5', 'seed': 42, 'enforce_eager': True, 'enable_prefix_caching': False, 'tensor_parallel_size': 1, 'data_parallel_size': 1, 'dtype': 'auto', 'gpu_memory_utilization': 0.7}), gen_kwargs: ({}), limit: None, num_fewshot: 5, batch_size: 32
+|      Tasks       |Version|     Filter      |n-shot|  Metric   |   |Value |   |Stderr|
+|------------------|------:|-----------------|-----:|-----------|---|-----:|---|-----:|
+|arc_challenge_chat|      1|remove_whitespace|     0|exact_match|↑  |0.5913|±  |0.0144|
+
+✓ 완료: kmseong/llama-2-7b-chat-hf-arc-rsn-tuned-lr5e-5 (task: arc-c)
+
+==========================================
+모든 평가 완료!
+총 실행: 4개 (모델 2개 × task 2개)
+결과 경로: eval_results/
+로그 파일: logs/eval_20260503_213413.log
+==========================================
+평가 종료 시간: Sun May  3 09:35:56 PM KST 2026
+결과 요약: logs/eval_20260503_213413_results.log
